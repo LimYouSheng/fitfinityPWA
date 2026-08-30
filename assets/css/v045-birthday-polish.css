@@ -1,0 +1,49 @@
+/* v0.45 — final Birthday field alignment/date cue */
+
+/* A small, field-level date cue without reintroducing onboarding commentary. */
+#clientModal .birthday-field-v45 > label,
+#trainerModal .birthday-field-v45 > label{
+  display:flex!important;
+  align-items:center!important;
+  gap:7px!important;
+  min-height:16px!important;
+}
+
+#clientModal .date-cue-v45,
+#trainerModal .date-cue-v45{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:1px 5px!important;
+  border:1px solid #4b5260!important;
+  border-radius:999px!important;
+  color:#aeb5c2!important;
+  font-size:8px!important;
+  font-weight:850!important;
+  letter-spacing:.08em!important;
+  line-height:1.25!important;
+}
+
+/* iPad/Safari: vertically centre the native date value instead of letting it sit high. */
+.portal-tablet-v32 #newClientAge,
+.portal-tablet-v32 #newClient2AgeV36,
+.portal-tablet-v32 #newTrainerBirthday{
+  height:42px!important;
+  min-height:42px!important;
+  padding-top:0!important;
+  padding-bottom:0!important;
+  line-height:42px!important;
+  color-scheme:dark!important;
+}
+
+.portal-tablet-v32 #newClientAge::-webkit-date-and-time-value,
+.portal-tablet-v32 #newClient2AgeV36::-webkit-date-and-time-value,
+.portal-tablet-v32 #newTrainerBirthday::-webkit-date-and-time-value{
+  display:flex!important;
+  align-items:center!important;
+  min-height:42px!important;
+  height:42px!important;
+  padding:0!important;
+  margin:0!important;
+  text-align:left!important;
+}

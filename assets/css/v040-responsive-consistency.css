@@ -1,0 +1,181 @@
+/* v0.40 — responsive consistency and visibility fixes */
+
+/* Standardise Add Client / Add Trainer completion actions. */
+#clientModal .client-onboard-actions,
+#trainerModal .trainer-onboard-actions-v40{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:10px!important;
+  width:100%!important;
+  margin-top:14px!important;
+  align-items:stretch!important;
+}
+#clientModal .client-onboard-actions .btn,
+#trainerModal .trainer-onboard-actions-v40 .btn{
+  width:100%!important;
+  min-width:0!important;
+  min-height:40px!important;
+  margin:0!important;
+  padding:9px 10px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+
+/* iPad: Add Client should retain the same two-column field rhythm as Add Trainer. */
+.portal-tablet-v32 #clientModal .form-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:10px!important;
+}
+
+/* iPad availability: keep the seven-day row full width, but make time controls compact. */
+.portal-tablet-v32 #clientModal .client-availability-time-row{
+  grid-template-columns:112px 112px 86px!important;
+  gap:8px!important;
+  width:min(100%,326px)!important;
+  max-width:326px!important;
+  justify-content:start!important;
+}
+.portal-tablet-v32 #trainerModal .availability-builder-row{
+  grid-template-columns:112px 112px 86px minmax(0,1fr)!important;
+  gap:8px!important;
+  width:100%!important;
+  max-width:none!important;
+  justify-content:start!important;
+}
+.portal-tablet-v32 #trainerModal .availability-builder-row>.day-picker{
+  grid-column:1/-1!important;
+  width:100%!important;
+}
+.portal-tablet-v32 #clientModal .client-availability-time-row>.field,
+.portal-tablet-v32 #trainerModal .availability-builder-row>.field{
+  width:112px!important;
+  max-width:112px!important;
+}
+.portal-tablet-v32 #clientModal .client-availability-time-row input,
+.portal-tablet-v32 #trainerModal .availability-builder-row>.field input{
+  width:112px!important;
+  max-width:112px!important;
+  min-width:0!important;
+  box-sizing:border-box!important;
+}
+.portal-tablet-v32 #clientModal .client-availability-time-row>.btn,
+.portal-tablet-v32 #trainerModal .availability-builder-row>.btn{
+  grid-column:3!important;
+  width:86px!important;
+  min-width:86px!important;
+  max-width:86px!important;
+  height:40px!important;
+  padding:7px 5px!important;
+  margin:0!important;
+  box-sizing:border-box!important;
+}
+
+/* iPad remuneration cycle list: name | sessions | remuneration | status | View. */
+.portal-tablet-v32 #remunerationOwnerGroups .rem-trainer-list-row-v40,
+.portal-tablet-v32 .rem-trainer-list .rem-trainer-list-row-v40{
+  display:grid!important;
+  grid-template-columns:minmax(130px,1.25fr) minmax(76px,.55fr) minmax(120px,1fr) minmax(90px,.72fr) 64px!important;
+  gap:12px!important;
+  align-items:center!important;
+  width:100%!important;
+  padding:12px 4px!important;
+  box-sizing:border-box!important;
+}
+.portal-tablet-v32 .rem-trainer-list-row-v40>*{min-width:0!important}
+.portal-tablet-v32 .rem-trainer-list-row-v40 .rem-list-name-v40 strong{
+  display:block!important;
+  white-space:nowrap!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+}
+.portal-tablet-v32 .rem-list-metric-v40{
+  display:grid!important;
+  gap:3px!important;
+  align-content:center!important;
+  justify-items:start!important;
+}
+.portal-tablet-v32 .rem-list-metric-v40 small{
+  display:block!important;
+  font-size:7.5px!important;
+  font-weight:850!important;
+  color:#858d9c!important;
+  letter-spacing:.35px!important;
+  white-space:nowrap!important;
+}
+.portal-tablet-v32 .rem-list-metric-v40 strong,
+.portal-tablet-v32 .rem-list-metric-v40>span:not(.pill){
+  font-size:11px!important;
+  white-space:nowrap!important;
+}
+.portal-tablet-v32 .rem-trainer-list-row-v40>.btn{
+  grid-column:5!important;
+  width:64px!important;
+  min-width:64px!important;
+  justify-self:end!important;
+  margin:0!important;
+}
+
+/* iPad trainer-specific cycle detail: distribute the session row across the full modal width. */
+.portal-tablet-v32 #remunerationBreakdownModal .rem-session-card{
+  grid-template-columns:minmax(0,1.35fr) minmax(0,1fr) minmax(120px,.8fr)!important;
+  column-gap:24px!important;
+  row-gap:6px!important;
+  padding:13px 16px!important;
+}
+.portal-tablet-v32 #remunerationBreakdownModal .rem-session-card-main{justify-self:start!important;text-align:left!important}
+.portal-tablet-v32 #remunerationBreakdownModal .rem-session-card-meta{justify-self:center!important;text-align:left!important;width:100%!important}
+.portal-tablet-v32 #remunerationBreakdownModal .rem-session-card-pay{justify-self:end!important;text-align:right!important;width:auto!important;min-width:120px!important}
+
+@media(max-width:780px){
+  /* Core mobile CSS used to hide these columns. Restore the requested information explicitly. */
+  #owner-package .past-package-table-v37 th:nth-child(3),
+  #owner-package .past-package-table-v37 td:nth-child(3){display:table-cell!important}
+  #owner-package .past-package-table-v37 th,
+  #owner-package .past-package-table-v37 td{box-sizing:border-box!important}
+  #owner-package .past-package-table-v37 th:nth-child(1),
+  #owner-package .past-package-table-v37 td:nth-child(1){width:40%!important}
+  #owner-package .past-package-table-v37 th:nth-child(2),
+  #owner-package .past-package-table-v37 td:nth-child(2){width:28%!important}
+  #owner-package .past-package-table-v37 th:nth-child(3),
+  #owner-package .past-package-table-v37 td:nth-child(3){width:32%!important}
+  #owner-package .past-package-table-v37 td:nth-child(2),
+  #owner-package .past-package-table-v37 td:nth-child(3){font-size:8.5px!important}
+
+  #owner-history .session-history-table th:nth-child(3),
+  #owner-history .session-history-table td:nth-child(3){display:table-cell!important}
+  #owner-history .session-history-table th,
+  #owner-history .session-history-table td{box-sizing:border-box!important}
+  #owner-history .session-history-table th:nth-child(1),
+  #owner-history .session-history-table td:nth-child(1){width:24%!important}
+  #owner-history .session-history-table th:nth-child(2),
+  #owner-history .session-history-table td:nth-child(2){width:40%!important;display:table-cell!important}
+  #owner-history .session-history-table th:nth-child(3),
+  #owner-history .session-history-table td:nth-child(3){width:24%!important}
+  #owner-history .session-history-table th:nth-child(4),
+  #owner-history .session-history-table td:nth-child(4){width:12%!important}
+  #owner-history .session-history-table .pill{
+    display:inline-flex!important;
+    max-width:100%!important;
+    white-space:nowrap!important;
+    font-size:6.8px!important;
+    padding:3px 4px!important;
+  }
+
+  /* New remuneration markup remains roomy on phone instead of regressing. */
+  #remunerationOwnerGroups .rem-trainer-list-row-v40,
+  .rem-trainer-list .rem-trainer-list-row-v40{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto!important;
+    gap:8px 10px!important;
+    align-items:center!important;
+    padding:11px 2px!important;
+  }
+  .rem-trainer-list-row-v40 .rem-list-name-v40{grid-column:1/3!important;grid-row:1!important}
+  .rem-trainer-list-row-v40>.btn{grid-column:3!important;grid-row:1!important;width:58px!important;min-width:58px!important}
+  .rem-trainer-list-row-v40 .rem-list-sessions-v40{grid-column:1!important;grid-row:2!important}
+  .rem-trainer-list-row-v40 .rem-list-payout-v40{grid-column:2!important;grid-row:2!important}
+  .rem-trainer-list-row-v40 .rem-list-status-v40{grid-column:3!important;grid-row:2!important;justify-self:end!important}
+  .rem-list-metric-v40 small{display:block!important;font-size:7px!important;color:#858d9c!important;font-weight:850!important;letter-spacing:.3px!important;margin-bottom:2px!important}
+  .rem-list-metric-v40 strong,.rem-list-metric-v40>span:not(.pill){font-size:9px!important;white-space:nowrap!important}
+}

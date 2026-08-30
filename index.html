@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#050509">
+<title>Fitfinity Website + Staff Portal — Interactive Wireframe</title>
+<link rel="stylesheet" href="assets/css/core.css">
+
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Fitfinity Staff">
+
+
+<link rel="stylesheet" href="assets/css/patches/v023-overrides.css" id="v023-overrides">
+</head>
+<body>
+<div id="publicShell" class="public-shell">
+<nav class="site-nav">
+  <img class="site-logo" src="assets/images/fitfinity-logo.jpg" alt="Fitfinity logo" onclick="goPublic('home')">
+  <button class="mobile-menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">MENU</button>
+  <div class="nav-links">
+    <button class="nav-link" data-page="home" onclick="goPublic('home')">Home</button>
+    <button class="nav-link" data-page="membership" onclick="goPublic('membership')">Gym Membership</button>
+    <button class="nav-link" data-page="training" onclick="goPublic('training')">Personal Training</button>
+    <button class="nav-link" data-page="about" onclick="goPublic('about')">About</button>
+    <button class="nav-link" data-page="login" onclick="goPublic('login')">Staff Portal</button>
+  </div>
+</nav>
+
+<!-- HOME -->
+<main id="home" class="public-page">
+<section class="hero"><div class="hero-bg" style="background-image:url('assets/images/home-hero.jpg')"></div><div class="hero-content">
+  <h1>Move Better.<br>Get Stronger.<br><span class="pink">Keep Progressing.</span></h1>
+  <p>Trainer-led coaching in a friendly, results-focused studio.<br>Real people. Real progress. Real support.</p>
+  <div class="actions"><button class="btn btn-blue" onclick="goPublic('membership','plans')">Join Gym Membership　›</button><button class="btn btn-pink" onclick="goPublic('training')">Enquire Personal Training　›</button></div>
+</div></section>
+<section class="dark-section"><div class="section-title"><div><div class="kicker">Video Library</div><h2>Train With Purpose</h2></div><button class="btn btn-pink" onclick="goPublic('videos')">View All Videos　›</button></div>
+<div class="video-grid">
+  <article class="video-card" onclick="openVideo('Dumbbell Strength')"><div class="media-img" style="background-image:url('assets/images/video-dumbbell-strength.jpg')"></div><div class="play">▶</div><div class="video-meta"><strong>Dumbbell Strength</strong><small>Upper Body Focus</small><div class="pink-line"></div></div></article>
+  <article class="video-card" onclick="openVideo('Lower Body Power')"><div class="media-img" style="background-image:url('assets/images/video-lower-body-power.jpg')"></div><div class="play">▶</div><div class="video-meta"><strong>Lower Body Power</strong><small>Build Strength & Stability</small><div class="pink-line"></div></div></article>
+  <article class="video-card" onclick="openVideo('Core & Conditioning')"><div class="media-img" style="background-image:url('assets/images/video-core-conditioning.jpg')"></div><div class="play">▶</div><div class="video-meta"><strong>Core & Conditioning</strong><small>Stronger Core. Better You.</small><div class="pink-line"></div></div></article>
+  <article class="video-card" onclick="openVideo('HIIT Finisher')"><div class="media-img" style="background-image:url('assets/images/video-hiit-finisher.jpg')"></div><div class="play">▶</div><div class="video-meta"><strong>HIIT Finisher</strong><small>Burn. Sweat. Repeat.</small><div class="pink-line"></div></div></article>
+</div></section>
+<section class="white-section"><div class="kicker">Member Stories</div><h2>Real People. Real Results.</h2><div class="testimonials" id="homeTestimonials"></div><div class="dots"><button class="dot active" onclick="rotateTestimonials(0)"></button><button class="dot" onclick="rotateTestimonials(1)"></button><button class="dot" onclick="rotateTestimonials(2)"></button></div></section>
+<section class="cta-band"><div><div class="cta-left"><div class="cta-emblem">⌁</div><div><h2>Ready To Start Your Journey?</h2><p>Join our gym community or work 1-on-1 with our expert coaches.</p></div></div><div class="cta-features"><span>🏋 Trainer-Led Coaching</span><span>👥 Supportive Community</span><span>▣ Flexible Plans</span><span>▥ Real Results</span></div></div><div class="cta-buttons"><button class="btn btn-white" onclick="goPublic('membership','plans')">Join Gym Membership　›</button><button class="btn btn-pink" onclick="goPublic('training')">Enquire Personal Training　›</button></div></section>
+<footer class="footer"><div class="footer-grid"><div class="footer-col"><img class="footer-logo" role="button" tabindex="0" title="Back to Home" onclick="goPublic('home')" style="cursor:pointer" src="assets/images/fitfinity-logo.jpg" alt="Fitfinity" role="button" tabindex="0" title="Back to Home" onclick="goPublic('home')" onkeydown="if(event.key==='Enter'||event.key===' '){goPublic('home')}" style="cursor:pointer"><p>A trainer-led fitness studio helping you move better, get stronger, and live healthier.<br>Real people. Real progress. Real support.</p><div class="socials"><span class="social">f</span><span class="social">◎</span><span class="social">◉</span><span class="social">▶</span></div></div><div class="footer-col"><h4>CONTACT US</h4><p>● Block 305 #01-26,<br>　Clementi St 12,<br>　Singapore 120305</p><p>☎ 9772 3345</p><p>✉ hello@fitfinity.sg</p><p>◷ Mon–Fri: 6:00am–9:30pm<br>　Sat–Sun: 8:00am–3:00pm</p></div><div class="footer-col"><h4>QUICK LINKS</h4><a href="#" onclick="goPublic('membership')">Gym Membership</a><a href="#" onclick="goPublic('training')">Personal Training</a><a href="#" onclick="goPublic('about')">About Us</a><a href="#" onclick="goPublic('training');setTimeout(()=>scrollToId('coaches'),100)">Meet Our Coaches</a><a href="#" onclick="goPublic('membership');setTimeout(()=>document.querySelector('.faq-grid').scrollIntoView(),100)">FAQs</a><a href="#" onclick="openModal('tourModal')">Contact Us</a></div><div class="footer-col"><h4>PURCHASE & BOOKING</h4><p>All memberships and class bookings are securely powered by Glofox.</p><button class="btn" onclick="openGlofox('Fitfinity')">POWERED BY GLOFOX</button><p style="color:var(--pink)">You will be redirected to Glofox to complete your purchase.</p></div></div><div class="copyright"><span>© 2026 FITFINITY. All rights reserved.</span><span><a href="#" style="display:inline" onclick="goPublic('legal')">Privacy Policy</a>　|　<a href="#" style="display:inline" onclick="goPublic('legal')">Terms & Conditions</a></span></div></footer>
+</main>
+
+<!-- GYM MEMBERSHIP -->
+<main id="membership" class="public-page">
+<section class="hero"><div class="hero-bg" style="background-image:url('assets/images/membership-hero.jpg')"></div><div class="hero-content"><h1>Train In A Studio<br>Built For<br><span class="pink">Real Progress.</span></h1><p>Premium equipment. Expert support.<br>A community that pushes you forward.</p><div class="actions"><button class="btn btn-blue" onclick="scrollToId('plans')">View Memberships　›</button><button class="btn btn-pink" onclick="openModal('tourModal')">Book a Free Tour　›</button></div><div class="mini-features"><span>Coach-Led Support</span><span>Clean & Functional</span><span>Results-Driven Community</span></div></div></section>
+<section class="dark-section"><div class="section-title"><div><h2>Equipment Showcase</h2><p>Everything you need. Nothing you don’t.</p></div><button class="btn btn-pink" onclick="goPublic('gallery')">View Full Gallery　›</button></div><div class="equipment-grid">
+<article class="equipment"><div class="equipment-img" style="background-image:url('assets/images/equipment-squat-racks.jpg')"></div><div class="equipment-copy"><h3>Squat Racks</h3><p>Built for strength and progressive overload.</p></div></article><article class="equipment"><div class="equipment-img" style="background-image:url('assets/images/equipment-dumbbells.jpg')"></div><div class="equipment-copy"><h3>Dumbbells</h3><p>Wide range from light to heavy.</p></div></article><article class="equipment"><div class="equipment-img" style="background-image:url('assets/images/equipment-cardio-zone.jpg')"></div><div class="equipment-copy"><h3>Cardio Zone</h3><p>Treadmills, bikes and rowers.</p></div></article><article class="equipment"><div class="equipment-img" style="background-image:url('assets/images/equipment-functional-area.jpg')"></div><div class="equipment-copy"><h3>Functional Area</h3><p>Turf for sled pushes and conditioning.</p></div></article><article class="equipment"><div class="equipment-img" style="background-image:url('assets/images/equipment-adjustable-benches.jpg')"></div><div class="equipment-copy"><h3>Adjustable Benches</h3><p>Versatile setups for all lifts.</p></div></article><article class="equipment"><div class="equipment-img" style="background-image:url('assets/images/equipment-recovery-stretch.jpg')"></div><div class="equipment-copy"><h3>Recovery & Stretch</h3><p>Stretch out, reset and recharge.</p></div></article>
+</div></section>
+<section class="dark-section"><div class="section-title"><div><h2>Why Members Choose Fitfinity</h2><p>More than a gym. A place to grow stronger every day.</p></div></div><div class="benefit-grid"><div class="benefit"><div class="benefit-icon">◎</div><h3>SUPPORTIVE ENVIRONMENT</h3><p>Friendly coaches and members who lift each other up.</p></div><div class="benefit"><div class="benefit-icon">▣</div><h3>FLEXIBLE ACCESS</h3><p>Train on your schedule with convenient options.</p></div><div class="benefit"><div class="benefit-icon">✦</div><h3>CLEAN & WELL-MAINTAINED</h3><p>Spotless equipment and space you can count on.</p></div><div class="benefit"><div class="benefit-icon">═</div><h3>STRENGTH-FOCUSED SETUP</h3><p>Quality equipment for real training and real results.</p></div></div></section>
+<section id="plans" class="dark-section"><div class="section-title"><div><h2>Membership Options</h2><p>Flexible plans to fit your goals and lifestyle. <span class="kicker">Dummy examples</span></p></div><span class="muted">Bookings and memberships powered by Glofox</span></div><div class="plans"><article class="plan"><span class="price">$29<small>/week</small></span><h3>Basic</h3><p>For consistent movers</p><ul><li>Gym access during staffed hours</li><li>Strength & cardio equipment</li><li>Community support</li></ul><button class="btn btn-pink" onclick="openGlofox('Basic')">Choose Basic</button></article><article class="plan popular"><span class="price">$49<small>/week</small></span><h3>Standard</h3><p>For dedicated trainers</p><ul><li>24/7 gym access</li><li>All equipment & functional area</li><li>Member-only PT rates</li></ul><button class="btn btn-blue" onclick="openGlofox('Standard')">Choose Standard</button></article><article class="plan"><span class="price">$69<small>/week</small></span><h3>Premium</h3><p>For those who want the most</p><ul><li>24/7 gym access</li><li>Priority class booking</li><li>Complimentary body assessment</li></ul><button class="btn btn-pink" onclick="openGlofox('Premium')">Choose Premium</button></article></div></section>
+<section class="dark-section"><div class="section-title"><div><h2>Frequently Asked Questions</h2></div><p>Still have questions? <a style="color:var(--pink)" href="#" onclick="openModal('tourModal')">Contact us</a></p></div><div class="faq-grid" id="faqGrid"></div></section>
+<section class="cta-band"><div><div class="cta-left"><div class="cta-emblem">⌁</div><div><h2>Ready To Start Your Journey?</h2><p>Join our gym community or work 1-on-1 with our expert coaches.</p></div></div><div class="cta-features"><span>🏋 Trainer-Led Coaching</span><span>👥 Supportive Community</span><span>▣ Flexible Plans</span><span>▥ Real Results</span></div></div><div class="cta-buttons"><button class="btn btn-white" onclick="goPublic('membership','plans')">Join Gym Membership　›</button><button class="btn btn-pink" onclick="goPublic('training')">Enquire Personal Training　›</button></div></section>
+<footer class="footer"><div class="footer-grid"><div class="footer-col"><img class="footer-logo" src="assets/images/fitfinity-logo.jpg" alt="Fitfinity"><p>A trainer-led fitness studio helping you move better, get stronger, and live healthier.<br>Real people. Real progress. Real support.</p><div class="socials"><span class="social">f</span><span class="social">◎</span><span class="social">◉</span><span class="social">▶</span></div></div><div class="footer-col"><h4>CONTACT US</h4><p>● Block 305 #01-26,<br>　Clementi St 12,<br>　Singapore 120305</p><p>☎ 9772 3345</p><p>✉ hello@fitfinity.sg</p><p>◷ Mon–Fri: 6:00am–9:30pm<br>　Sat–Sun: 8:00am–3:00pm</p></div><div class="footer-col"><h4>QUICK LINKS</h4><a href="#" onclick="goPublic('membership')">Gym Membership</a><a href="#" onclick="goPublic('training')">Personal Training</a><a href="#" onclick="goPublic('about')">About Us</a><a href="#" onclick="goPublic('training');setTimeout(()=>scrollToId('coaches'),100)">Meet Our Coaches</a><a href="#" onclick="goPublic('membership');setTimeout(()=>document.querySelector('.faq-grid').scrollIntoView(),100)">FAQs</a><a href="#" onclick="openModal('tourModal')">Contact Us</a></div><div class="footer-col"><h4>PURCHASE & BOOKING</h4><p>All memberships and class bookings are securely powered by Glofox.</p><button class="btn" onclick="openGlofox('Fitfinity')">POWERED BY GLOFOX</button><p style="color:var(--pink)">You will be redirected to Glofox to complete your purchase.</p></div></div><div class="copyright"><span>© 2026 FITFINITY. All rights reserved.</span><span><a href="#" style="display:inline" onclick="goPublic('legal')">Privacy Policy</a>　|　<a href="#" style="display:inline" onclick="goPublic('legal')">Terms & Conditions</a></span></div></footer>
+</main>
+
+<!-- PERSONAL TRAINING -->
+<main id="training" class="public-page">
+<section class="hero"><div class="hero-bg" style="background-image:url('assets/images/training-hero.jpg')"></div><div class="hero-content"><div class="kicker">One-to-one coaching</div><h1>Personal<br>Training<br><span class="pink">Built Around You.</span></h1><p>Expert coaching. Personalised programs.<br>Accountability that gets real results.</p><div class="actions"><button class="btn btn-blue" onclick="openWhatsapp('General personal training enquiry')">◉ WhatsApp Us Now</button><button class="btn btn-pink" onclick="openCall()">☎ Call 9772 3345</button></div><small class="muted">All enquiries go directly to our owner.</small></div></section>
+<section class="audience-strip"><div class="audience"><strong>New to training?</strong><span>We’ll guide you from day one.</span></div><div class="audience"><strong>Hitting a plateau?</strong><span>We’ll break through together.</span></div><div class="audience"><strong>Training for a goal?</strong><span>Weight loss, strength or performance.</span></div><div class="audience"><strong>Busy schedule?</strong><span>Flexible timing that works for you.</span></div><div class="audience"><strong>Want to feel your best?</strong><span>Better energy and long-term health.</span></div></section>
+<section id="coaches" class="dark-section"><div class="section-title"><div><div class="kicker">Meet Our Personal Trainers</div><h2>Experts. Motivators. Results Driven.</h2></div><button class="btn btn-pink" onclick="openCall()">All enquiries to our owner　☎</button></div><div class="trainer-grid">
+<article class="trainer-card"><div class="trainer-photo" style="background-image:url('assets/images/trainer-huang-min.jpg')"></div><div class="trainer-body"><h3>Huang Min</h3><div class="trainer-role">Strength & Conditioning Coach</div><div class="tags"><span class="tag">Strength</span><span class="tag">Hypertrophy</span><span class="tag">Fat Loss</span></div><div class="checks">● Certified Personal Trainer<br>● First Aid & CPR Certified<br>● Results-focused coaching</div><button class="btn btn-blue" style="width:100%;margin-top:10px" onclick="openWhatsapp('Personal training enquiry for Huang Min')">Enquire Now: 9772 3345</button></div></article><article class="trainer-card"><div class="trainer-photo" style="background-image:url('assets/images/trainer-jason.jpg')"></div><div class="trainer-body"><h3>Jason T.</h3><div class="trainer-role">Performance & Strength Coach</div><div class="tags"><span class="tag">Strength</span><span class="tag">Powerlifting</span><span class="tag">Mobility</span></div><div class="checks">● Certified Personal Trainer<br>● First Aid & CPR Certified<br>● Results-focused coaching</div><button class="btn btn-blue" style="width:100%;margin-top:10px" onclick="openWhatsapp('Personal training enquiry for Jason T.')">Enquire Now: 9772 3345</button></div></article><article class="trainer-card"><div class="trainer-photo" style="background-image:url('assets/images/trainer-meiling.jpg')"></div><div class="trainer-body"><h3>Meiling K.</h3><div class="trainer-role">Women’s Health Coach</div><div class="tags"><span class="tag">Weight Loss</span><span class="tag">Tone</span><span class="tag">Lifestyle</span></div><div class="checks">● Certified Personal Trainer<br>● First Aid & CPR Certified<br>● Results-focused coaching</div><button class="btn btn-blue" style="width:100%;margin-top:10px" onclick="openWhatsapp('Personal training enquiry for Meiling K.')">Enquire Now: 9772 3345</button></div></article><article class="trainer-card"><div class="trainer-photo" style="background-image:url('assets/images/trainer-darren.jpg')"></div><div class="trainer-body"><h3>Darren W.</h3><div class="trainer-role">Functional Fitness Coach</div><div class="tags"><span class="tag">HIIT</span><span class="tag">Conditioning</span><span class="tag">Recovery</span></div><div class="checks">● Certified Personal Trainer<br>● First Aid & CPR Certified<br>● Results-focused coaching</div><button class="btn btn-blue" style="width:100%;margin-top:10px" onclick="openWhatsapp('Personal training enquiry for Darren W.')">Enquire Now: 9772 3345</button></div></article>
+</div></section>
+<section class="dark-section"><div class="kicker">The Fitfinity Coaching Journey</div><h2 class="display" style="font-size:36px;margin:4px 0 20px">A Simple Process. Powerful Results.</h2><div class="journey"><div class="journey-step"><div class="journey-icon">☷</div><div><h3>1. CONSULTATION</h3><p>We get to know you, your goals, challenges and lifestyle.</p></div></div><div class="journey-step"><div class="journey-icon">▤</div><div><h3>2. PROGRAM PLANNING</h3><p>We design a personalised training, nutrition and habit plan.</p></div></div><div class="journey-step"><div class="journey-icon">▥</div><div><h3>3. TRAIN & TRACK</h3><p>We coach, track and adjust to keep you progressing.</p></div></div></div></section>
+<section class="dark-section"><div class="kicker">Real People. Real Results.</div><div class="testimonials" style="margin-top:12px"><div class="quick-row"><div><strong>SOPHIA L.</strong><div class="stars">★★★★★</div><small class="muted">I lost 8kg and gained confidence.</small></div></div><div class="quick-row"><div><strong>MARCUS T.</strong><div class="stars">★★★★★</div><small class="muted">Stronger, fitter and more energised.</small></div></div><div class="quick-row"><div><strong>JESSICA R.</strong><div class="stars">★★★★★</div><small class="muted">The personalised plan made the difference.</small></div></div></div></section>
+<section class="cta-band"><div class="cta-left"><div class="cta-emblem">◉</div><div><h2>Ready To Start Your Transformation?</h2><p>Chat with our owner directly to find out how personal training can work for you.</p></div></div><button class="btn btn-white" onclick="openWhatsapp('General personal training enquiry')">◉ WhatsApp 9772 3345</button></section>
+<footer class="footer"><div class="footer-grid"><div class="footer-col"><img class="footer-logo" src="assets/images/fitfinity-logo.jpg" alt="Fitfinity"><p>A trainer-led fitness studio helping you move better, get stronger, and live healthier.<br>Real people. Real progress. Real support.</p><div class="socials"><span class="social">f</span><span class="social">◎</span><span class="social">◉</span><span class="social">▶</span></div></div><div class="footer-col"><h4>CONTACT US</h4><p>● Block 305 #01-26,<br>　Clementi St 12,<br>　Singapore 120305</p><p>☎ 9772 3345</p><p>✉ hello@fitfinity.sg</p><p>◷ Mon–Fri: 6:00am–9:30pm<br>　Sat–Sun: 8:00am–3:00pm</p></div><div class="footer-col"><h4>QUICK LINKS</h4><a href="#" onclick="goPublic('membership')">Gym Membership</a><a href="#" onclick="goPublic('training')">Personal Training</a><a href="#" onclick="goPublic('about')">About Us</a><a href="#" onclick="goPublic('training');setTimeout(()=>scrollToId('coaches'),100)">Meet Our Coaches</a><a href="#" onclick="goPublic('membership');setTimeout(()=>document.querySelector('.faq-grid').scrollIntoView(),100)">FAQs</a><a href="#" onclick="openModal('tourModal')">Contact Us</a></div><div class="footer-col"><h4>PURCHASE & BOOKING</h4><p>All memberships and class bookings are securely powered by Glofox.</p><button class="btn" onclick="openGlofox('Fitfinity')">POWERED BY GLOFOX</button><p style="color:var(--pink)">You will be redirected to Glofox to complete your purchase.</p></div></div><div class="copyright"><span>© 2026 FITFINITY. All rights reserved.</span><span><a href="#" style="display:inline" onclick="goPublic('legal')">Privacy Policy</a>　|　<a href="#" style="display:inline" onclick="goPublic('legal')">Terms & Conditions</a></span></div></footer>
+</main>
+
+<!-- ABOUT -->
+<main id="about" class="public-page">
+<section class="hero"><div class="hero-bg" style="background-image:url('assets/images/about-hero.jpg');left:29%"></div><div class="hero-content"><div class="kicker">About Chau</div><h1>Built On Passion.<br><span class="pink">Driven By Purpose.</span></h1><p>From personal transformation to helping others do the same.<br>This is my journey.</p></div></section>
+<section class="dark-section"><div class="split"><div class="photo-panel" style="background-image:url('assets/images/about-story.jpg')"></div><div class="copy"><div class="kicker">My Story</div><h2>It Started With Me.<br>Now It’s About You.</h2><p>Like many, I wasn’t always confident in my own skin. Fitness transformed my body, but more importantly, it transformed my mindset.</p><p>I created Fitfinity to be more than just a gym—it’s a place where real people come to get stronger, move better and become the best version of themselves.</p><p>No egos. No judgment. Just support, structure and results that last.</p></div></div></section>
+<section class="dark-section"><div class="kicker">Experience Highlights</div><h2 class="display" style="font-size:38px;margin:5px 0 18px">Years Of Experience. Real Results.</h2><div class="highlight-grid"><div class="highlight"><div class="big">10+</div><strong>YEARS</strong><p class="muted">In the fitness industry</p></div><div class="highlight"><div class="big">1000+</div><strong>CLIENTS</strong><p class="muted">Trained & transformed</p></div><div class="highlight"><div class="big">CUSTOMISED</div><strong>PROGRAMS</strong><p class="muted">Built for real people</p></div><div class="highlight"><div class="big">PROVEN</div><strong>RESULTS</strong><p class="muted">That speak for themselves</p></div></div></section>
+<section class="dark-section timeline-section" style="background-image:url('assets/images/about-timeline.jpg')"><div class="timeline"><div class="kicker">My Journey</div><h2 class="display" style="font-size:36px">A Journey Of Growth And Commitment</h2><div class="timeline-item"><strong>2014</strong><p>Started my fitness journey and discovered my passion for strength training.</p></div><div class="timeline-item"><strong>2016</strong><p>Became a certified trainer and began coaching part-time.</p></div><div class="timeline-item"><strong>2018</strong><p>Left the corporate world to pursue fitness full-time.</p></div><div class="timeline-item"><strong>2020</strong><p>Founded Fitfinity to build a supportive community.</p></div><div class="timeline-item"><strong>TODAY</strong><p>Still learning. Still growing. Still here for you.</p></div></div></section>
+<section class="dark-section"><div class="kicker">Certifications & Education</div><h2 class="display" style="font-size:38px;margin:5px 0 18px">Qualified. Trusted. Committed.</h2><div class="cert-grid"><div class="cert"><strong>NASM</strong><small>Certified Personal Trainer</small></div><div class="cert"><strong>ACE</strong><small>Certified Personal Trainer</small></div><div class="cert"><strong>PN</strong><small>Certified Nutrition Coach</small></div><div class="cert"><strong>CPR/AED</strong><small>Emergency Care Certified</small></div><div class="cert"><strong>WFS</strong><small>Women’s Fitness Specialist</small></div></div></section>
+<section class="cta-band"><div><div class="cta-left"><div class="cta-emblem">⌁</div><div><h2>Ready To Start Your Journey?</h2><p>Join our gym community or work 1-on-1 with our expert coaches.</p></div></div><div class="cta-features"><span>🏋 Trainer-Led Coaching</span><span>👥 Supportive Community</span><span>▣ Flexible Plans</span><span>▥ Real Results</span></div></div><div class="cta-buttons"><button class="btn btn-white" onclick="goPublic('membership','plans')">Join Gym Membership　›</button><button class="btn btn-pink" onclick="goPublic('training')">Enquire Personal Training　›</button></div></section>
+<footer class="footer"><div class="footer-grid"><div class="footer-col"><img class="footer-logo" src="assets/images/fitfinity-logo.jpg" alt="Fitfinity"><p>A trainer-led fitness studio helping you move better, get stronger, and live healthier.<br>Real people. Real progress. Real support.</p><div class="socials"><span class="social">f</span><span class="social">◎</span><span class="social">◉</span><span class="social">▶</span></div></div><div class="footer-col"><h4>CONTACT US</h4><p>● Block 305 #01-26,<br>　Clementi St 12,<br>　Singapore 120305</p><p>☎ 9772 3345</p><p>✉ hello@fitfinity.sg</p><p>◷ Mon–Fri: 6:00am–9:30pm<br>　Sat–Sun: 8:00am–3:00pm</p></div><div class="footer-col"><h4>QUICK LINKS</h4><a href="#" onclick="goPublic('membership')">Gym Membership</a><a href="#" onclick="goPublic('training')">Personal Training</a><a href="#" onclick="goPublic('about')">About Us</a><a href="#" onclick="goPublic('training');setTimeout(()=>scrollToId('coaches'),100)">Meet Our Coaches</a><a href="#" onclick="goPublic('membership');setTimeout(()=>document.querySelector('.faq-grid').scrollIntoView(),100)">FAQs</a><a href="#" onclick="openModal('tourModal')">Contact Us</a></div><div class="footer-col"><h4>PURCHASE & BOOKING</h4><p>All memberships and class bookings are securely powered by Glofox.</p><button class="btn" onclick="openGlofox('Fitfinity')">POWERED BY GLOFOX</button><p style="color:var(--pink)">You will be redirected to Glofox to complete your purchase.</p></div></div><div class="copyright"><span>© 2026 FITFINITY. All rights reserved.</span><span><a href="#" style="display:inline" onclick="goPublic('legal')">Privacy Policy</a>　|　<a href="#" style="display:inline" onclick="goPublic('legal')">Terms & Conditions</a></span></div></footer>
+</main>
+
+<!-- EXTRA DESTINATIONS -->
+<main id="videos" class="public-page"><section class="inner-head"><div class="kicker">Additional Destination</div><h1>Video Library</h1><p class="muted">Browse coaching clips, exercise demonstrations and gym updates.</p></section><section class="dark-section"><div class="tabs"><button class="active">All</button><button>Strength</button><button>Mobility</button><button>HIIT</button></div><div class="video-grid"><article class="video-card" onclick="openVideo('Dumbbell Strength')"><div class="media-img" style="background-image:url('assets/images/video-dumbbell-strength.jpg')"></div><div class="play">▶</div><div class="video-meta"><strong>Dumbbell Strength</strong><small>Coaching demonstration</small></div></article><article class="video-card" onclick="openVideo('Lower Body Power')"><div class="media-img" style="background-image:url('assets/images/video-lower-body-power.jpg')"></div><div class="play">▶</div><div class="video-meta"><strong>Lower Body Power</strong><small>Coaching demonstration</small></div></article><article class="video-card" onclick="openVideo('Core & Conditioning')"><div class="media-img" style="background-image:url('assets/images/video-core-conditioning.jpg')"></div><div class="play">▶</div><div class="video-meta"><strong>Core & Conditioning</strong><small>Coaching demonstration</small></div></article><article class="video-card" onclick="openVideo('HIIT Finisher')"><div class="media-img" style="background-image:url('assets/images/video-hiit-finisher.jpg')"></div><div class="play">▶</div><div class="video-meta"><strong>HIIT Finisher</strong><small>Coaching demonstration</small></div></article><article class="video-card" onclick="openVideo('Mobility Flow')"><div class="media-img" style="background-image:url('assets/images/video-dumbbell-strength.jpg')"></div><div class="play">▶</div><div class="video-meta"><strong>Mobility Flow</strong><small>Coaching demonstration</small></div></article><article class="video-card" onclick="openVideo('Technique Check')"><div class="media-img" style="background-image:url('assets/images/video-lower-body-power.jpg')"></div><div class="play">▶</div><div class="video-meta"><strong>Technique Check</strong><small>Coaching demonstration</small></div></article><article class="video-card" onclick="openVideo('Sled Conditioning')"><div class="media-img" style="background-image:url('assets/images/video-core-conditioning.jpg')"></div><div class="play">▶</div><div class="video-meta"><strong>Sled Conditioning</strong><small>Coaching demonstration</small></div></article><article class="video-card" onclick="openVideo('Recovery Routine')"><div class="media-img" style="background-image:url('assets/images/video-hiit-finisher.jpg')"></div><div class="play">▶</div><div class="video-meta"><strong>Recovery Routine</strong><small>Coaching demonstration</small></div></article></div></section><footer class="footer"><div class="footer-grid"><div class="footer-col"><img class="footer-logo" src="assets/images/fitfinity-logo.jpg" alt="Fitfinity"><p>A trainer-led fitness studio helping you move better, get stronger, and live healthier.<br>Real people. Real progress. Real support.</p><div class="socials"><span class="social">f</span><span class="social">◎</span><span class="social">◉</span><span class="social">▶</span></div></div><div class="footer-col"><h4>CONTACT US</h4><p>● Block 305 #01-26,<br>　Clementi St 12,<br>　Singapore 120305</p><p>☎ 9772 3345</p><p>✉ hello@fitfinity.sg</p><p>◷ Mon–Fri: 6:00am–9:30pm<br>　Sat–Sun: 8:00am–3:00pm</p></div><div class="footer-col"><h4>QUICK LINKS</h4><a href="#" onclick="goPublic('membership')">Gym Membership</a><a href="#" onclick="goPublic('training')">Personal Training</a><a href="#" onclick="goPublic('about')">About Us</a><a href="#" onclick="goPublic('training');setTimeout(()=>scrollToId('coaches'),100)">Meet Our Coaches</a><a href="#" onclick="goPublic('membership');setTimeout(()=>document.querySelector('.faq-grid').scrollIntoView(),100)">FAQs</a><a href="#" onclick="openModal('tourModal')">Contact Us</a></div><div class="footer-col"><h4>PURCHASE & BOOKING</h4><p>All memberships and class bookings are securely powered by Glofox.</p><button class="btn" onclick="openGlofox('Fitfinity')">POWERED BY GLOFOX</button><p style="color:var(--pink)">You will be redirected to Glofox to complete your purchase.</p></div></div><div class="copyright"><span>© 2026 FITFINITY. All rights reserved.</span><span><a href="#" style="display:inline" onclick="goPublic('legal')">Privacy Policy</a>　|　<a href="#" style="display:inline" onclick="goPublic('legal')">Terms & Conditions</a></span></div></footer></main>
+<main id="gallery" class="public-page"><section class="inner-head"><div class="kicker">Additional Destination</div><h1>Full Gym Gallery</h1><p class="muted">Select any image to open it in a lightbox.</p></section><section class="dark-section"><div class="gallery-grid"><div class="gallery-item" style="background-image:url('assets/images/equipment-squat-racks.jpg')" onclick="openGallery(1)"></div><div class="gallery-item" style="background-image:url('assets/images/equipment-dumbbells.jpg')" onclick="openGallery(2)"></div><div class="gallery-item" style="background-image:url('assets/images/equipment-cardio-zone.jpg')" onclick="openGallery(3)"></div><div class="gallery-item" style="background-image:url('assets/images/equipment-functional-area.jpg')" onclick="openGallery(4)"></div><div class="gallery-item" style="background-image:url('assets/images/equipment-adjustable-benches.jpg')" onclick="openGallery(5)"></div><div class="gallery-item" style="background-image:url('assets/images/equipment-recovery-stretch.jpg')" onclick="openGallery(6)"></div><div class="gallery-item" style="background-image:url('assets/images/equipment-squat-racks.jpg')" onclick="openGallery(1)"></div><div class="gallery-item" style="background-image:url('assets/images/equipment-dumbbells.jpg')" onclick="openGallery(2)"></div><div class="gallery-item" style="background-image:url('assets/images/equipment-cardio-zone.jpg')" onclick="openGallery(3)"></div></div></section><footer class="footer"><div class="footer-grid"><div class="footer-col"><img class="footer-logo" src="assets/images/fitfinity-logo.jpg" alt="Fitfinity"><p>A trainer-led fitness studio helping you move better, get stronger, and live healthier.<br>Real people. Real progress. Real support.</p><div class="socials"><span class="social">f</span><span class="social">◎</span><span class="social">◉</span><span class="social">▶</span></div></div><div class="footer-col"><h4>CONTACT US</h4><p>● Block 305 #01-26,<br>　Clementi St 12,<br>　Singapore 120305</p><p>☎ 9772 3345</p><p>✉ hello@fitfinity.sg</p><p>◷ Mon–Fri: 6:00am–9:30pm<br>　Sat–Sun: 8:00am–3:00pm</p></div><div class="footer-col"><h4>QUICK LINKS</h4><a href="#" onclick="goPublic('membership')">Gym Membership</a><a href="#" onclick="goPublic('training')">Personal Training</a><a href="#" onclick="goPublic('about')">About Us</a><a href="#" onclick="goPublic('training');setTimeout(()=>scrollToId('coaches'),100)">Meet Our Coaches</a><a href="#" onclick="goPublic('membership');setTimeout(()=>document.querySelector('.faq-grid').scrollIntoView(),100)">FAQs</a><a href="#" onclick="openModal('tourModal')">Contact Us</a></div><div class="footer-col"><h4>PURCHASE & BOOKING</h4><p>All memberships and class bookings are securely powered by Glofox.</p><button class="btn" onclick="openGlofox('Fitfinity')">POWERED BY GLOFOX</button><p style="color:var(--pink)">You will be redirected to Glofox to complete your purchase.</p></div></div><div class="copyright"><span>© 2026 FITFINITY. All rights reserved.</span><span><a href="#" style="display:inline" onclick="goPublic('legal')">Privacy Policy</a>　|　<a href="#" style="display:inline" onclick="goPublic('legal')">Terms & Conditions</a></span></div></footer></main>
+<main id="legal" class="public-page"><section class="inner-head"><div class="kicker">Placeholder</div><h1>Privacy & Terms</h1><p class="muted">Legal content is still to be supplied and reviewed.</p></section><section class="white-section"><h2>Content Placeholder</h2><p>This prototype reserves a dedicated internal destination for Privacy Policy and Terms & Conditions. Final wording should be provided or professionally reviewed before launch.</p></section><footer class="footer"><div class="footer-grid"><div class="footer-col"><img class="footer-logo" src="assets/images/fitfinity-logo.jpg" alt="Fitfinity"><p>A trainer-led fitness studio helping you move better, get stronger, and live healthier.<br>Real people. Real progress. Real support.</p><div class="socials"><span class="social">f</span><span class="social">◎</span><span class="social">◉</span><span class="social">▶</span></div></div><div class="footer-col"><h4>CONTACT US</h4><p>● Block 305 #01-26,<br>　Clementi St 12,<br>　Singapore 120305</p><p>☎ 9772 3345</p><p>✉ hello@fitfinity.sg</p><p>◷ Mon–Fri: 6:00am–9:30pm<br>　Sat–Sun: 8:00am–3:00pm</p></div><div class="footer-col"><h4>QUICK LINKS</h4><a href="#" onclick="goPublic('membership')">Gym Membership</a><a href="#" onclick="goPublic('training')">Personal Training</a><a href="#" onclick="goPublic('about')">About Us</a><a href="#" onclick="goPublic('training');setTimeout(()=>scrollToId('coaches'),100)">Meet Our Coaches</a><a href="#" onclick="goPublic('membership');setTimeout(()=>document.querySelector('.faq-grid').scrollIntoView(),100)">FAQs</a><a href="#" onclick="openModal('tourModal')">Contact Us</a></div><div class="footer-col"><h4>PURCHASE & BOOKING</h4><p>All memberships and class bookings are securely powered by Glofox.</p><button class="btn" onclick="openGlofox('Fitfinity')">POWERED BY GLOFOX</button><p style="color:var(--pink)">You will be redirected to Glofox to complete your purchase.</p></div></div><div class="copyright"><span>© 2026 FITFINITY. All rights reserved.</span><span><a href="#" style="display:inline" onclick="goPublic('legal')">Privacy Policy</a>　|　<a href="#" style="display:inline" onclick="goPublic('legal')">Terms & Conditions</a></span></div></footer></main>
+
+<!-- STAFF LOGIN -->
+<main id="login" class="public-page"><div class="login-page"><section class="login-left" style="background-image:url('assets/images/staff-login.jpg')"><div class="login-motto">Move Better.<br>Get <span style="color:var(--pink)">Stronger.</span></div></section><section class="login-right"><form class="login-card" onsubmit="login(event)"><div class="kicker">Staff Portal</div><h2>Welcome back</h2><p class="muted">Sign in to continue to the owner or trainer portal.</p><div class="field"><label>EMAIL ADDRESS</label><input id="loginEmail" type="email" value="owner@fitfinity.sg" required></div><div class="field"><label>PASSWORD</label><input type="password" value="password" required></div><div class="login-row"><label><input type="checkbox" style="width:auto"> Remember me</label><a href="#" style="color:var(--pink)" onclick="toast('Password reset requested.')">Forgot password?</a></div><button class="btn btn-blue" style="width:100%">SIGN IN</button></form></section></div></main>
+</div>
+
+<!-- PORTAL -->
+<div id="portal" class="hidden"><div class="portal-shell"><aside class="side"><img class="side-logo" src="assets/images/fitfinity-logo.jpg" alt="Fitfinity"><div id="roleChip" class="role-chip">OWNER / SITE ADMIN</div>
+<div id="ownerMenu"><div class="side-label">OPERATIONS</div><nav class="side-menu">
+<button data-portal="owner-dashboard" onclick="showPortal('owner-dashboard')"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></span><span>Dashboard</span></button>
+<button data-portal="owner-requests" onclick="showPortal('owner-requests')"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v12H7l-3 3z"/><path d="M8 9h8M8 13h5"/></svg></span><span>Requests</span></button>
+<button data-portal="owner-clients" onclick="showPortal('owner-clients')"><span class="nav-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-4 2.5-6 6-6s6 2 6 6"/><path d="M16 6.5a3 3 0 0 1 0 5.8M16.5 14c2.8.3 4.5 2.2 4.5 5"/></svg></span><span>Clients</span></button>
+<button data-portal="owner-trainers" onclick="showPortal('owner-trainers')"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M6 7v10M18 7v10M3 10v4M21 10v4M6 12h12"/></svg></span><span>Trainers</span></button>
+
+<button data-portal="owner-sessions" onclick="showPortal('owner-sessions')"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/><path d="m9 15 2 2 4-4"/></svg></span><span>Sessions</span></button>
+<button data-portal="owner-finance" onclick="showPortal('owner-finance')"><span class="nav-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5c-.8-.8-2-1.2-3.5-1.2-2 0-3.5 1-3.5 2.5 0 3.8 7 1.4 7 5.1 0 1.5-1.4 2.6-3.7 2.6-1.5 0-2.9-.5-3.8-1.4M12 5v14"/></svg></span><span>Remuneration</span></button></nav>
+<div class="side-label">MANAGEMENT</div><nav class="side-menu">
+<button data-portal="owner-exercises" onclick="showPortal('owner-exercises')"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M7 4h10l2 4-7 12L5 8z"/><path d="m9 8 3 4 3-4"/></svg></span><span>Exercise Library</span></button>
+
+<button data-portal="owner-content" onclick="showPortal('owner-content')"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m3 15 5-5 4 4 3-3 6 6"/><circle cx="16" cy="8" r="1.5"/></svg></span><span>Website Content</span></button></nav></div>
+<div id="trainerMenu" class="hidden"><div class="side-label">TRAINER</div><nav class="side-menu">
+<button data-portal="trainer-dashboard" onclick="showPortal('trainer-dashboard')"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></span><span>Dashboard</span></button>
+<button data-portal="trainer-clients" onclick="showPortal('trainer-clients')"><span class="nav-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-4 2.5-6 6-6s6 2 6 6"/><path d="M16 6.5a3 3 0 0 1 0 5.8M16.5 14c2.8.3 4.5 2.2 4.5 5"/></svg></span><span>Clients</span></button>
+<button data-portal="trainer-sessions" onclick="showPortal('trainer-sessions')"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/><path d="m9 15 2 2 4-4"/></svg></span><span>Sessions</span></button>
+<button data-portal="trainer-remuneration" onclick="showPortal('trainer-remuneration')"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 6.5c0-1.9-1.8-3.5-5-3.5S7 4.4 7 6.5 8.6 9.6 12 10.5s5 2 5 4.5-2 4-5 4-5-1.5-5-3.8"/></svg></span><span>Remuneration</span></button>
+</nav></div>
+</aside>
+<div id="portalDrawerScrim" class="portal-drawer-scrim" onclick="closePortalDrawer()"></div><section class="portal-main"><header class="portal-top"><div class="portal-top-left"><button id="portalBackCue" class="mobile-back-cue" onclick="portalBack()" aria-label="Back" title="Back"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button><button id="mobilePortalMenuBtn" class="mobile-drawer-btn" onclick="togglePortalDrawer()" aria-label="Open portal menu">☰</button><button id="portalHomeBtn" class="portal-home-btn" onclick="goPortalHome()" aria-label="Go to dashboard">⌂ <span>Home</span></button><div><h3 id="portalTitle">Dashboard</h3><small class="muted" id="portalSubtitle">Internal operations</small></div></div><button id="portalAccountTrigger" class="portal-account-trigger" onclick="openAccountProfile()" aria-label="Open account profile"><span id="portalUserName">Chau</span><div id="userAvatar" class="portal-avatar">CH</div></button></header><div class="portal-content">
+
+<!-- OWNER DASHBOARD -->
+<section id="owner-dashboard" class="portal-page">
+  <div class="page-head owner-dashboard-head">
+    <div>
+      <h1>Dashboard</h1>
+      
+    </div>
+    <div class="owner-dashboard-actions quick-action-bar" aria-label="Owner quick actions">
+      <button class="btn btn-blue quick-action-btn" onclick="openClientOnboarding()">Add Client</button>
+      <button class="btn quick-action-btn" onclick="openModal('trainerModal')">Add Trainer</button>
+    </div>
+  </div>
+
+  <div class="panel owner-requests-preview" id="ownerRequestsPreviewPanel">
+    <div class="page-head requests-preview-head" style="margin-bottom:10px">
+      <div><h3>Requests</h3></div>
+      <button class="btn btn-sm" onclick="showPortal('owner-requests')">View All</button>
+    </div>
+    <div id="ownerDashboardRequestRows" class="request-list compact-request-list"></div>
+  </div>
+
+  <div class="panel dashboard-calendar">
+    <div class="page-head dashboard-calendar-head" style="margin-bottom:8px">
+      <div><h3>Session Calendar</h3></div>
+      <div class="view-switch"><button id="ownerDashWeekBtn" class="active" onclick="setDashboardCalendar('owner','week')">Week</button><button id="ownerDashMonthBtn" onclick="setDashboardCalendar('owner','month')">Month</button></div>
+    </div>
+    <div class="calendar-toolbar compact-calendar-toolbar">
+      <div class="actions calendar-nav-actions"><button class="btn btn-sm" onclick="moveDashboardCalendar('owner',-1)" aria-label="Previous period">←</button><button class="btn btn-sm calendar-period-btn" id="ownerDashCalendarPeriod" onclick="goDashboardCalendarToday('owner')">24–30 Aug 2026</button><button class="btn btn-sm" onclick="moveDashboardCalendar('owner',1)" aria-label="Next period">→</button></div>
+    </div>
+    <div id="ownerDashCalendarGrid"></div>
+  </div>
+
+  <div class="panel owner-milestone-panel">
+    <div class="page-head owner-milestone-head renewals-head" style="margin-bottom:10px">
+      <div><h3>Upcoming Renewals</h3></div>
+      <button class="btn btn-sm renewals-view-all" onclick="openUpcomingRenewalsModal()">View All</button>
+    </div>
+    <div id="ownerMilestoneRows" class="milestone-list"></div>
+  </div>
+</section>
+
+<!-- OWNER REQUESTS -->
+<section id="owner-requests" class="portal-page">
+  <div class="page-head"><div><h1>Requests</h1></div></div>
+  <div class="toolbar request-toolbar">
+    <input id="ownerRequestSearch" type="search" placeholder="Search requests" oninput="renderOwnerRequestsV29()">
+    <select id="ownerRequestType" onchange="renderOwnerRequestsV29()"><option value="">All types</option><option value="Availability">Availability</option><option value="Session Time">Session Time</option><option value="Trainer Change">Trainer Change</option></select>
+    <select id="ownerRequestStatus" onchange="renderOwnerRequestsV29()"><option value="Pending">Pending</option><option value="">All status</option><option value="Approved">Approved</option><option value="Rejected">Rejected</option></select>
+  </div>
+  <div id="ownerRequestRows" class="request-list"></div>
+</section>
+
+<!-- OWNER CLIENTS -->
+<section id="owner-clients" class="portal-page"><div class="page-head"><div><h1>Clients</h1></div><button class="btn btn-blue" onclick="openClientOnboarding()">Add Client</button></div>
+  <div class="stats owner-page-stats owner-client-stats">
+    <div class="stat">
+      <div class="stat-label">NEW CLIENTS THIS MONTH</div>
+      <div class="stat-value">14</div>
+      <span class="pill pink">August 2026</span>
+    </div>
+  </div>
+  <div class="toolbar"><input id="clientSearch" placeholder="Search client" oninput="renderClients()"><select id="clientType" onchange="renderClients()"><option value="">All types</option><option>Individual</option><option>Couple</option></select><select id="clientTrainerFilter" onchange="renderClients()"><option value="">All trainers</option></select></div><div class="table-wrap fit-list-wrap"><table class="fit-list-table client-list-table"><thead><tr><th>Client</th><th>Type</th><th>Package / Goal</th><th>Assigned Trainer</th><th>Last Trained</th><th>Renewal</th><th></th></tr></thead><tbody id="clientRows"></tbody></table></div></section>
+<section id="owner-client" class="portal-page">
+<span id="ownerClientName" class="hidden" aria-hidden="true">Amanda Lim</span>
+<div class="panel profile shared-identity-card client-identity-card">
+  <div class="portal-avatar">AL</div>
+  <div class="identity-card-copy"><h2 id="sharedClientDisplayName" style="margin:0">Amanda Lim</h2></div>
+  <div class="identity-card-actions">
+    <span class="pill green">ACTIVE</span>
+    <button id="sharedClientEditBtn" class="header-edit-icon small" onclick="toggleClientMainEdit()" title="Edit client contact details" aria-label="Edit client contact details">Edit</button>
+    <button id="sharedClientCancelBtn" class="header-cancel-btn small hidden" onclick="cancelClientMainEdit()" title="Cancel edit" aria-label="Cancel edit">Cancel</button>
+  </div>
+</div>
+
+<div class="tabs" style="margin-top:15px"><button class="active" onclick="clientTab(this,'owner-overview')">Overview</button><button onclick="clientTab(this,'owner-package')">Package</button><button onclick="clientTab(this,'owner-history')">Session History</button><button onclick="clientTab(this,'owner-upcoming')">Upcoming Sessions</button><button onclick="clientTab(this,'owner-progress')">Progress</button><button id="sharedTrainerAssignmentTab" onclick="clientTab(this,'owner-access')">Trainer Assignment</button></div>
+<div id="owner-overview" class="client-tab">
+  <div class="grid-equal">
+    <div class="panel" id="clientInformationPanel"><h3>Client Information</h3>
+      <div id="singleClientInfoRows" class="info">
+        <div class="info-row"><span>Phone</span><strong id="clientPhoneDisplay">+65 9123 4567</strong><div id="clientPhoneInlineGroup" class="inline-edit-control hidden phone-input-group"><select id="clientPhoneCountryInline" class="phone-country"><option value="+65" selected>+65</option><option value="+60">+60</option><option value="+62">+62</option><option value="+63">+63</option><option value="+66">+66</option><option value="+61">+61</option><option value="+44">+44</option><option value="+1">+1</option></select><input id="clientPhoneInline" value="9123 4567" inputmode="tel"></div></div>
+        <div class="info-row"><span>Email</span><strong id="clientEmailDisplay">amanda@example.com</strong><input id="clientEmailInline" class="inline-edit-control hidden" type="email" value="amanda@example.com"></div>
+        <div class="info-row"><span>Age</span><strong id="clientAgeDisplay">32</strong><input id="clientAgeInline" class="inline-edit-control hidden" type="number" min="1" max="120" value="32"></div>
+        <div class="info-row"><span>Gender</span><strong id="clientGenderDisplay">Female</strong><select id="clientGenderInline" class="inline-edit-control hidden"><option>Female</option><option>Male</option><option>Prefer not to say</option></select></div>
+        <div class="info-row"><span>Emergency contact</span><strong id="clientEmergencyDisplay">Jason Lim • +65 9000 1122</strong><div id="clientEmergencyInline" class="inline-edit-control hidden client-emergency-edit"><input id="clientEmergencyNameInline" placeholder="Name" value="Jason Lim"><div class="phone-input-group"><select id="clientEmergencyPhoneCountryInline" class="phone-country"><option value="+65" selected>+65</option><option value="+60">+60</option><option value="+62">+62</option><option value="+63">+63</option><option value="+66">+66</option><option value="+61">+61</option><option value="+44">+44</option><option value="+1">+1</option></select><input id="clientEmergencyPhoneInline" placeholder="9000 1122" inputmode="tel" value="9000 1122"></div></div></div>
+        <div class="info-row"><span>Start date</span><strong id="clientStartDateDisplay">18 Aug 2026</strong><input id="clientStartDateInline" class="inline-edit-control hidden" type="date" value="2026-08-18"></div>
+        <div class="info-row"><span>Primary trainer</span><strong id="clientPrimaryTrainerDisplay">Marcus Tan</strong></div>
+        <div class="info-row"><span>Current package ends</span><strong id="clientPackageEndDisplay">22 Sep 2026 • Session 12</strong></div>
+      </div>
+      <div id="coupleClientInfoRows" class="couple-overview-people hidden"></div>
+    </div>
+    <div class="panel"><div class="edit-section-head"><h3>Health / Limitation Notes</h3><div class="header-edit-actions"><button id="clientHealthEditBtn" class="header-edit-icon small" onclick="toggleClientHealthEdit()" title="Edit health notes" aria-label="Edit health notes">Edit</button><button id="clientHealthCancelBtn" class="header-cancel-btn small hidden" onclick="cancelClientHealthEdit()">Cancel</button></div></div><div id="clientHealthNotice" class="notice">Previous right-knee discomfort. Check current symptoms before lower-body loading. Avoid sudden high-impact volume increases.</div><textarea id="clientHealthInline" class="inline-edit-control hidden" style="min-height:120px">Previous right-knee discomfort. Check current symptoms before lower-body loading. Avoid sudden high-impact volume increases.</textarea><div id="coupleHealthNotes" class="couple-health-notes hidden"></div></div>
+  </div>
+  <div class="panel client-remarks-panel" style="margin-top:10px"><div class="edit-section-head"><h3>Remarks</h3><div class="header-edit-actions"><button id="clientRemarksEditBtn" class="header-edit-icon small" onclick="toggleClientRemarksEdit()">Edit</button><button id="clientRemarksCancelBtn" class="header-cancel-btn small hidden" onclick="cancelClientRemarksEdit()">Cancel</button></div></div><div id="clientRemarksDisplay" class="notice">Prefers evening sessions. Keep progression gradual and review goals at renewal.</div><textarea id="clientRemarksInline" class="inline-edit-control hidden" style="min-height:100px">Prefers evening sessions. Keep progression gradual and review goals at renewal.</textarea></div>
+
+</div>
+<div id="owner-package" class="client-tab hidden">
+  <div class="panel">
+    <div class="page-head" style="margin-bottom:12px">
+      <div><h3>Current Package</h3><p>12 sessions</p></div>
+      <span class="pill blue">Active</span>
+    </div>
+    <div class="info">
+      <div class="info-row"><span>Purchase date</span><strong>15 Aug 2026</strong></div>
+      <div class="info-row"><span>Total sessions</span><strong>12</strong></div>
+      <div class="info-row"><span>Completed</span><strong id="ownerPackageUsedDetail">3</strong></div>
+      <div class="info-row"><span>Remaining</span><strong id="ownerPackageBalanceDetail">9 sessions</strong></div>
+      <div class="info-row"><span>Upcoming bookings</span><strong>9 scheduled</strong></div>
+      <div class="info-row"><span>Package end</span><strong>22 Sep 2026</strong></div>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:16px">
+    <h3>Past Packages</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Package</th><th>Purchase Date</th><th>Completed Date</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>12 sessions</strong></td>
+            <td>03 Jul 2026</td>
+            <td>14 Aug 2026</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div id="owner-history" class="client-tab hidden"><div class="table-wrap"><table class="session-history-table"><thead><tr><th>Date</th><th>Trainer</th><th>Status</th><th></th></tr></thead><tbody>
+<tr><td><strong>21 Aug 2026</strong></td><td>Marcus Tan</td><td><span class="pill green">Completed</span></td><td><button class="btn btn-sm" onclick="openClientPackageSession('S118')">View</button></td></tr>
+<tr><td><strong>19 Aug 2026</strong></td><td>Marcus Tan</td><td><span class="pill green">Completed</span></td><td><button class="btn btn-sm" onclick="openClientPackageSession('S117')">View</button></td></tr>
+<tr><td><strong>17 Aug 2026</strong></td><td>Marcus Tan</td><td><span class="pill green">Completed</span></td><td><button class="btn btn-sm" onclick="openClientPackageSession('S116')">View</button></td></tr>
+<tr><td><strong>14 Aug 2026</strong></td><td>Marcus Tan</td><td><span class="pill green">Completed</span></td><td><button class="btn btn-sm" onclick="openModal('sessionModal')">View</button></td></tr>
+<tr><td><strong>11 Aug 2026</strong></td><td>Marcus Tan</td><td><span class="pill green">Completed</span></td><td><button class="btn btn-sm" onclick="openModal('sessionModal')">View</button></td></tr>
+</tbody></table></div></div>
+<div id="owner-upcoming" class="client-tab hidden">
+  <div class="panel">
+    <div class="page-head compact-client-tab-head" style="margin-bottom:10px"><div><h3>Upcoming Sessions</h3></div></div>
+    <div id="clientUpcomingSessionsRows" class="schedule-list client-upcoming-list"></div>
+  </div>
+</div>
+<div id="owner-progress" class="client-tab hidden">
+  <div class="page-head progress-head" style="margin-bottom:10px">
+    <div class="progress-heading-block">
+      <h3>Strength Progress</h3>
+      
+      <select id="strengthProgressExercise" class="progress-exercise-select" onchange="renderStrengthProgress()"></select>
+    </div>
+    <button class="btn btn-sm progress-export-btn" onclick="exportProgressReport()">Export Report</button>
+  </div>
+
+  <div class="panel strength-chart-panel">
+    <div class="strength-chart-head">
+      <div>
+        <div class="stat-label" id="strengthChartExercise">Smith back squat</div>
+        <div class="strength-main-metric"><span id="strengthLatestLoad">25</span><small>kg</small></div>
+      </div>
+      <div class="strength-chart-summary">
+        <div><span class="stat-label">CHANGE</span><strong id="strengthLoadChange">+10 kg</strong></div>
+        <div><span class="stat-label">COMPLETED</span><strong id="strengthCompletedCount">6 sessions</strong></div>
+      </div>
+    </div>
+    <div class="strength-chart-wrap">
+      <svg id="strengthProgressChart" viewBox="0 0 900 280" role="img" aria-label="Exercise load trend"></svg>
+    </div>
+  </div>
+
+</div>
+<div id="owner-access" class="client-tab hidden panel"><div class="page-head" style="margin-bottom:12px"><div><h3>Trainer Assignment</h3><p class="muted">Primary trainer</p></div></div><div class="quick-list"><div class="quick-row"><div><strong id="primaryTrainerName">Marcus Tan</strong><br><small class="muted">Primary trainer • applies to future sessions</small></div><span class="pill green">Current</span></div></div><div class="field" style="max-width:420px"><label>PERMANENTLY REASSIGN PRIMARY TRAINER</label><select id="permanentTrainerSelect"><option>Rachel Ong</option><option>Daniel Lee</option><option>Priya Nair</option><option>Jerome Goh</option><option>Aisha Rahman</option><option>Kelvin Chua</option></select></div><button id="permanentReassignBtn" class="btn btn-blue" onclick="confirmPermanentReassignment()">Reassign</button></div>
+</section>
+
+<!-- OWNER TRAINERS -->
+<section id="owner-trainers" class="portal-page">
+  <div class="page-head"><div><h1>Trainers</h1></div><button class="btn btn-blue" onclick="openModal('trainerModal')">Add Trainer</button></div>
+  <div class="toolbar"><input id="trainerSearch" placeholder="Search trainer" oninput="renderTrainerDirectory()"><select id="trainerStatusFilter" onchange="renderTrainerDirectory()"><option value="">All account statuses</option><option>Active</option><option>Inactive</option><option>Password reset</option></select><select id="trainerPublicFilter" onchange="renderTrainerDirectory()"><option value="">Public & hidden profiles</option><option value="Visible">Public profile visible</option><option value="Hidden">Public profile hidden</option></select></div>
+  <div class="table-wrap fit-list-wrap"><table class="fit-list-table trainer-directory-table"><thead><tr><th>Trainer</th><th>Specialty</th><th>Assigned</th><th>Public profile</th><th>Account</th><th></th></tr></thead><tbody id="ownerTrainerRows">
+    <tr><td><strong>Marcus Tan</strong></td><td>Strength & Conditioning</td><td><span data-trainer-client-count="Marcus Tan">0</span></td><td>Visible</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openOwnerTrainer('Marcus Tan')">View</button></td></tr>
+    <tr><td><strong>Rachel Ong</strong></td><td>Strength & General Fitness</td><td><span data-trainer-client-count="Rachel Ong">0</span></td><td>Visible</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openOwnerTrainer('Rachel Ong')">View</button></td></tr>
+    <tr><td><strong>Daniel Lee</strong></td><td>Sports Conditioning</td><td><span data-trainer-client-count="Daniel Lee">0</span></td><td>Hidden</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openOwnerTrainer('Daniel Lee')">View</button></td></tr>
+    <tr><td><strong>Priya Nair</strong></td><td>Strength & Mobility</td><td><span data-trainer-client-count="Priya Nair">0</span></td><td>Visible</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openOwnerTrainer('Priya Nair')">View</button></td></tr>
+    <tr><td><strong>Jerome Goh</strong></td><td>Fat Loss & Conditioning</td><td><span data-trainer-client-count="Jerome Goh">0</span></td><td>Visible</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openOwnerTrainer('Jerome Goh')">View</button></td></tr>
+    <tr><td><strong>Aisha Rahman</strong></td><td>Mobility & General Fitness</td><td><span data-trainer-client-count="Aisha Rahman">0</span></td><td>Visible</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openOwnerTrainer('Aisha Rahman')">View</button></td></tr>
+    <tr><td><strong>Kelvin Chua</strong></td><td>Strength</td><td><span data-trainer-client-count="Kelvin Chua">0</span></td><td>Hidden</td><td><span class="pill amber">Password reset</span></td><td><button class="btn btn-sm" onclick="openOwnerTrainer('Kelvin Chua')">View</button></td></tr>
+  </tbody></table></div>
+</section>
+
+<section id="owner-trainer" class="portal-page">
+  <span id="ownerTrainerName" class="hidden" aria-hidden="true">Marcus Tan</span>
+  <input id="ownerTrainerNameInput" class="hidden" value="Marcus Tan" aria-hidden="true" tabindex="-1">
+  <div class="panel profile shared-identity-card trainer-identity-card">
+    <div class="portal-avatar" id="ownerTrainerAvatar">MT</div>
+    <div class="identity-card-copy"><strong id="ownerTrainerProfileName" class="identity-card-name">Marcus Tan</strong><p class="muted" id="ownerTrainerSpecialty">Strength & Conditioning</p><input id="ownerTrainerSpecialtyInput" class="inline-edit-control hidden" value="Strength & Conditioning"></div>
+    <div class="identity-card-actions"><span id="ownerTrainerStatus" class="pill green">ACTIVE ACCOUNT</span><button id="ownerTrainerHeaderEditBtn" class="header-edit-icon small" onclick="toggleOwnerTrainerEdit()" title="Edit trainer" aria-label="Edit trainer">Edit</button><button id="ownerTrainerCancelBtn" class="header-cancel-btn small hidden" onclick="cancelOwnerTrainerEdit()">Cancel</button></div>
+  </div>
+  <div class="tabs trainer-detail-tabs" style="margin-top:16px"><button class="active" onclick="ownerTrainerTab(this,'ownerTrainerOverview')">Overview</button><button onclick="ownerTrainerTab(this,'ownerTrainerAssignedClients');renderOwnerTrainerAssignedClients()">Assigned Clients</button><button onclick="ownerTrainerTab(this,'ownerTrainerAvailability')">Availability</button><button onclick="ownerTrainerTab(this,'ownerTrainerActivity')">Monthly Activity</button></div>
+  <div id="ownerTrainerOverview" class="owner-trainer-tab">
+    <div class="grid-equal trainer-overview-grid">
+      <div class="panel"><h3>Account Details</h3><div class="info"><div class="info-row"><span>Email</span><strong id="ownerTrainerEmail">marcus@fitfinity.sg</strong><input id="ownerTrainerEmailInput" class="inline-edit-control hidden" type="email"></div><div class="info-row"><span>Mobile number</span><strong id="ownerTrainerPhone">+65 9123 8877</strong><div id="ownerTrainerPhoneInputGroup" class="inline-edit-control hidden phone-input-group"><select id="ownerTrainerPhoneCountryInput" class="phone-country"><option value="+65" selected>+65</option><option value="+60">+60</option><option value="+62">+62</option><option value="+63">+63</option><option value="+66">+66</option><option value="+61">+61</option><option value="+44">+44</option><option value="+1">+1</option></select><input id="ownerTrainerPhoneInput" type="tel" placeholder="9123 4567"></div></div><div class="info-row"><span>Gender</span><strong id="ownerTrainerGender">Male</strong><select id="ownerTrainerGenderInput" class="inline-edit-control hidden"><option>Female</option><option>Male</option><option>Prefer not to say</option></select></div><div class="info-row"><span>Qualifications</span><strong id="ownerTrainerQualifications">NSCA, CPR/AED</strong><textarea id="ownerTrainerQualificationsInput" class="inline-edit-control hidden" style="min-height:72px"></textarea></div><div class="info-row"><span>Public profile</span><strong id="ownerTrainerPublic">Visible</strong><select id="ownerTrainerPublicInput" class="inline-edit-control hidden"><option>Visible</option><option>Hidden</option></select></div><div class="info-row"><span>Account status</span><strong id="ownerTrainerStatusText">Active</strong><select id="ownerTrainerStatusInput" class="inline-edit-control hidden"><option>Active</option><option>Inactive</option><option>Password reset</option></select></div></div></div>
+      <div class="panel" id="ownerTrainerRatesPanel">
+        <div class="edit-section-head"><h3>Rates</h3><div class="header-edit-actions"><button id="ownerTrainerRatesEditBtn" class="header-edit-icon small" onclick="toggleOwnerTrainerRatesEdit()">Edit</button><button id="ownerTrainerRatesCancelBtn" class="header-cancel-btn small hidden" onclick="cancelOwnerTrainerRatesEdit()">Cancel</button></div></div>
+        <div class="info">
+          <div class="info-row"><span>Peak rate</span><strong id="ownerTrainerPeakRateDisplay">$80 / session</strong><input id="ownerTrainerPeakRateInput" class="inline-edit-control hidden" type="number" min="0" oninput="handleOwnerTrainerRateChange()"></div>
+          <div class="info-row"><span>Off-peak rate</span><strong id="ownerTrainerOffpeakRateDisplay">$55 / session</strong><input id="ownerTrainerOffpeakRateInput" class="inline-edit-control hidden" type="number" min="0" oninput="handleOwnerTrainerRateChange()"></div>
+          <div class="info-row"><span>Current rates active from</span><strong id="ownerTrainerRateEffectiveDisplay">29 Aug 2026</strong></div>
+          <div class="info-row hidden" id="ownerTrainerNewRateEffectiveRow"><span>New rates active from</span><input id="ownerTrainerRateEffectiveInput" class="inline-edit-control" type="date" value="2026-08-29"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="ownerTrainerAssignedClients" class="owner-trainer-tab hidden">
+    <div class="panel">
+      <div class="toolbar trainer-assigned-toolbar">
+        <input id="ownerTrainerAssignedClientSearch" placeholder="Search client" oninput="renderOwnerTrainerAssignedClients()">
+        <select id="ownerTrainerAssignedClientType" onchange="renderOwnerTrainerAssignedClients()"><option value="">All types</option><option>Individual</option><option>Couple</option></select>
+      </div>
+      <div id="ownerTrainerAssignedClientsRows" class="quick-list"></div>
+    </div>
+  </div>
+  <div id="ownerTrainerAvailability" class="owner-trainer-tab hidden">
+    <div class="panel"><div class="page-head" style="margin-bottom:12px"><div><h3>Approved Availability</h3></div><button class="btn btn-blue" onclick="openOwnerAvailabilityEditor()">Edit Availability</button></div>
+      <div id="ownerTrainerAvailabilityGrid" class="availability-compact-list"></div>
+      
+      <div id="ownerTrainerPendingAvailability" class="panel" style="margin-top:14px"></div>
+    </div>
+  </div>
+  <div id="ownerTrainerActivity" class="owner-trainer-tab hidden">
+    <div class="stats trainer-activity-stats"><div class="stat"><div class="stat-label">COMPLETED SESSIONS</div><div class="stat-value" id="ownerTrainerSessions">62</div></div><div class="stat"><div class="stat-label">TRAINING HOURS</div><div class="stat-value" id="ownerTrainerHours">62.0</div></div><div class="stat"><div class="stat-label">PEAK SESSIONS</div><div class="stat-value" id="ownerTrainerPeakSessions">40</div><small class="muted">$80 / session</small></div><div class="stat"><div class="stat-label">OFF-PEAK SESSIONS</div><div class="stat-value" id="ownerTrainerOffpeakSessions">22</div><small class="muted">$55 / session</small></div><div class="stat"><div class="stat-label">CLOCKED REMUNERATION</div><div class="stat-value" id="ownerTrainerPayout">$4,410</div></div></div>
+    
+  </div>
+</section>
+
+<section id="owner-trainer-clients" class="portal-page">
+  <div class="page-head"><div><h1>Assigned Clients</h1><p id="ownerAssignedClientsSubtitle" class="muted"></p></div></div>
+  <div class="toolbar owner-assigned-client-toolbar">
+    <select id="ownerAssignedTrainerSelect" onchange="setOwnerAssignedTrainer(this.value)"></select>
+    <input id="ownerAssignedClientSearch" placeholder="Search client" oninput="renderOwnerAssignedClientsPage()">
+    <select id="ownerAssignedClientType" onchange="renderOwnerAssignedClientsPage()"><option value="">All types</option><option>Individual</option><option>Couple</option></select>
+  </div>
+  <div id="ownerAssignedClientsRows" class="quick-list"></div>
+</section>
+
+<!-- OWNER SESSIONS -->
+<section id="owner-sessions" class="portal-page">
+  <div class="page-head">
+    <div><h1>Sessions</h1></div>
+  </div>
+  
+  <div class="stats owner-page-stats owner-session-stats">
+    <div class="stat">
+      <div class="stat-label">COMPLETED SESSIONS THIS MONTH</div>
+      <div class="stat-value">314</div>
+      <span class="pill green">314 acknowledged</span>
+    </div>
+    <div class="stat">
+      <div class="stat-label">TRAINING HOURS THIS MONTH</div>
+      <div class="stat-value">314.0</div>
+      <span class="pill blue">Across 7 trainers</span>
+    </div>
+    <div class="stat">
+      <div class="stat-label">NOT PLANNED</div>
+      <div class="stat-value">18</div>
+      <span class="pill amber">Needs trainer plan</span>
+    </div>
+  </div>
+<div class="toolbar"><input id="ownerSessionSearch" placeholder="Search trainer or client" oninput="renderOwnerAllSessions()"><input id="ownerSessionDateFilter" type="text" placeholder="Date" inputmode="none" aria-label="Date" onfocus="activateDateFilter(this)" onclick="activateDateFilter(this)" onblur="deactivateDateFilter(this)" onchange="renderOwnerAllSessions()"><select id="ownerSessionStatusFilter" onchange="renderOwnerAllSessions()"><option value="">All statuses</option><option>Not planned</option><option>Planned</option><option>Completed</option></select><select id="ownerSessionTypeFilter" onchange="renderOwnerAllSessions()"><option value="">Individual & couple</option><option>Individual</option><option>Couple</option></select></div>
+  <div class="table-wrap fit-list-wrap"><table class="fit-list-table owner-session-list-table"><thead><tr><th>Date</th><th>Trainer</th><th>Client</th><th>Type</th><th>Duration</th><th>Status</th><th></th></tr></thead><tbody id="ownerSessionRows"></tbody></table></div>
+  
+</section>
+
+<!-- OWNER FINANCE -->
+<section id="owner-finance" class="portal-page">
+  <div class="page-head">
+    <div>
+      <h1>Remuneration</h1>
+      
+    </div>
+  </div>
+  
+  <div class="stats owner-page-stats owner-remuneration-stats">
+    <div class="stat">
+      <div class="stat-label">COMPLETED SESSIONS</div>
+      <div class="stat-value">314</div>
+      <span class="muted" style="font-size:10px">16 Jul – 15 Aug</span>
+    </div>
+    <div class="stat">
+      <div class="stat-label">TRAINING HOURS</div>
+      <div class="stat-value">314.0</div>
+      <span class="muted" style="font-size:10px">16 Jul – 15 Aug</span>
+    </div>
+    <div class="stat">
+      <div class="stat-label">TRAINER REMUNERATION</div>
+      <div class="stat-value"><span class="sensitive-money-inline owner-money-v29"><strong class="masked-money" data-value="$22,245">••••••</strong><button class="money-eye-btn" type="button" onclick="toggleSensitiveMoneyV25(this)" aria-label="Show amount">👁</button></span></div>
+      <span class="pill blue">Payout 16 Aug</span>
+    </div>
+    <div class="stat">
+      <div class="stat-label">APPROVAL STATUS</div>
+      <div class="stat-value" style="font-size:20px"><span class="pill amber">5 / 7 Approved</span></div>
+      <span class="muted" style="font-size:10px">Current pay cycle</span>
+    </div>
+  </div>
+<div class="table-wrap fit-list-wrap">
+    <table class="fit-list-table remuneration-list-table">
+      <thead>
+        <tr><th>Pay Cycle</th><th>Completed Sessions</th><th>Training Hours</th><th>Remuneration</th><th>Status</th><th></th></tr>
+      </thead>
+      <tbody id="ownerRemunerationMonthRows"></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- OWNER EXERCISES -->
+<section id="owner-exercises" class="portal-page">
+  <div class="page-head">
+    <div>
+      <h1>Exercise Library</h1>
+      <p>Exercise management</p>
+    </div>
+    <button class="btn btn-blue" onclick="openModal('exerciseModal')">Add Exercise</button>
+  </div>
+  <div class="stats owner-page-stats exercise-library-stats">
+    <div class="stat"><div class="stat-label">ACTIVE EXERCISES</div><div id="activeExerciseCountStat" class="stat-value">49</div><small class="muted">Available for session planning</small></div>
+    <div class="stat"><div class="stat-label">CATEGORIES</div><div class="stat-value">6</div><small class="muted">Full Body to Cardio</small></div>
+    <div class="stat"><div class="stat-label">LIBRARY CONTROL</div><div class="stat-value" style="font-size:24px">Owner</div></div>
+  </div>
+  <div class="toolbar">
+    <input id="ownerExerciseSearch" type="search" placeholder="Search exercise..." oninput="filterOwnerExercises()">
+    <select id="ownerExerciseCategory" onchange="filterOwnerExercises()">
+      <option value="">All categories</option><option value="Full Body">Full Body</option><option value="Upper Body">Upper Body</option><option value="Core">Core</option><option value="Lower Body">Lower Body</option><option value="Single Leg">Single Leg</option><option value="Cardio">Cardio</option>
+    </select>
+    <span class="pill blue" id="ownerExerciseCount">49 shown</span>
+  </div>
+  <div id="approvedExercises" class="table-wrap">
+    <table>
+      <thead><tr><th>Exercise</th><th>Category</th><th>Media</th><th>Status</th><th></th></tr></thead>
+      <tbody><tr class="owner-exercise-row" data-category="Full Body" data-name="dumbbell renegade row"><td><strong>Dumbbell renegade row</strong></td><td>Full Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Full Body" data-name="dumbbell push and press or a handle grips ball and vipr"><td><strong>Dumbbell Push and Press or a handle grips ball and Vipr</strong></td><td>Full Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Full Body" data-name="rdl to bent over row with dumbbell and barbell and vipr"><td><strong>RDL to bent over row with dumbbell and barbell and Vipr</strong></td><td>Full Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Full Body" data-name="cable wood chop"><td><strong>Cable wood chop</strong></td><td>Full Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Full Body" data-name="alternating back lunges to bicep curl with dumbbell or vipr or barbell"><td><strong>Alternating back lunges to bicep curl with dumbbell or Vipr or barbell</strong></td><td>Full Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Upper Body" data-name="smith chest press"><td><strong>Smith chest press</strong></td><td>Upper Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Upper Body" data-name="smith incline shoulder press"><td><strong>Smith incline shoulder press</strong></td><td>Upper Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Upper Body" data-name="smith bent over row"><td><strong>Smith bent over row</strong></td><td>Upper Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Upper Body" data-name="lpd"><td><strong>LPD</strong></td><td>Upper Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Upper Body" data-name="seated row"><td><strong>Seated row</strong></td><td>Upper Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Upper Body" data-name="assisted pull up"><td><strong>Assisted pull up</strong></td><td>Upper Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Upper Body" data-name="db chest press (incline bench and flat bench)"><td><strong>DB chest press (incline bench and flat bench)</strong></td><td>Upper Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Upper Body" data-name="db shoulder press (incline bench and flat bench)"><td><strong>DB shoulder press (incline bench and flat bench)</strong></td><td>Upper Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Upper Body" data-name="db or cable bicep curls both or single arm"><td><strong>DB or cable bicep curls both or single arm</strong></td><td>Upper Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Upper Body" data-name="db or cable lateral raise both or single arm"><td><strong>DB or cable lateral raise both or single arm</strong></td><td>Upper Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Upper Body" data-name="single arm lpd"><td><strong>Single arm LPD</strong></td><td>Upper Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Upper Body" data-name="single arm row"><td><strong>Single arm row</strong></td><td>Upper Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Upper Body" data-name="alternating db chest press both or single arm"><td><strong>Alternating DB chest press both or single arm</strong></td><td>Upper Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Upper Body" data-name="alternating db shoulder press both or single arm"><td><strong>Alternating DB shoulder press both or single arm</strong></td><td>Upper Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Upper Body" data-name="single arm db row"><td><strong>Single arm DB row</strong></td><td>Upper Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Upper Body" data-name="db or cable alternating front raise"><td><strong>DB or Cable alternating front raise</strong></td><td>Upper Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Core" data-name="upper core"><td><strong>Upper core</strong></td><td>Core</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Core" data-name="lower core"><td><strong>Lower core</strong></td><td>Core</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Core" data-name="obliques"><td><strong>Obliques</strong></td><td>Core</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Core" data-name="lower back"><td><strong>Lower back</strong></td><td>Core</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Lower Body" data-name="leg press"><td><strong>Leg press</strong></td><td>Lower Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Lower Body" data-name="smith back squat"><td><strong>Smith back squat</strong></td><td>Lower Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Lower Body" data-name="smith deadlift"><td><strong>Smith deadlift</strong></td><td>Lower Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Lower Body" data-name="smith rdl"><td><strong>Smith RDL</strong></td><td>Lower Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Lower Body" data-name="barbell rdl and barbell conventional dl"><td><strong>Barbell RDL and Barbell conventional DL</strong></td><td>Lower Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Lower Body" data-name="db or kb sumo squat"><td><strong>DB or KB Sumo Squat</strong></td><td>Lower Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Lower Body" data-name="leg extension"><td><strong>Leg extension</strong></td><td>Lower Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Lower Body" data-name="db goblet squat"><td><strong>DB Goblet squat</strong></td><td>Lower Body</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Single Leg" data-name="static lunge with db and with smith"><td><strong>Static lunge with DB and with Smith</strong></td><td>Single Leg</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Single Leg" data-name="single leg extension"><td><strong>Single leg extension</strong></td><td>Single Leg</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Single Leg" data-name="alternating back lunge with dumbbell and with smith"><td><strong>Alternating back lunge with dumbbell and with smith</strong></td><td>Single Leg</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Single Leg" data-name="side lunges with db or kb"><td><strong>Side lunges with DB or KB</strong></td><td>Single Leg</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Single Leg" data-name="step up alternating with db"><td><strong>Step up alternating with DB</strong></td><td>Single Leg</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Single Leg" data-name="walking lunges"><td><strong>Walking lunges</strong></td><td>Single Leg</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Single Leg" data-name="curtsey lunges"><td><strong>Curtsey lunges</strong></td><td>Single Leg</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Cardio" data-name="wall ball"><td><strong>Wall Ball</strong></td><td>Cardio</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Cardio" data-name="alternating slam ball"><td><strong>Alternating slam ball</strong></td><td>Cardio</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Cardio" data-name="miniband side walk to star jump"><td><strong>Miniband side walk to star jump</strong></td><td>Cardio</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Cardio" data-name="bench jump or box jump"><td><strong>Bench jump or Box jump</strong></td><td>Cardio</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Cardio" data-name="fanbike interval"><td><strong>Fanbike interval</strong></td><td>Cardio</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Cardio" data-name="kb swing"><td><strong>KB swing</strong></td><td>Cardio</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Cardio" data-name="trx mountain climber"><td><strong>TRX Mountain climber</strong></td><td>Cardio</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Cardio" data-name="bodyweight cardio"><td><strong>Bodyweight cardio</strong></td><td>Cardio</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr><tr class="owner-exercise-row" data-category="Cardio" data-name="battle ropes"><td><strong>Battle Ropes</strong></td><td>Cardio</td><td>Video</td><td><span class="pill green">Active</span></td><td><button class="btn btn-sm" onclick="openExerciseLibraryEdit(this)">Edit</button></td></tr></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- OWNER CMS -->
+<section id="owner-content" class="portal-page"><div class="page-head"><div><h1>Website Content</h1></div><button class="btn btn-blue" onclick="openContentPublishModal()">Publish</button></div><div class="content-cards"><div class="content-card"><h3>Homepage</h3><p>Hero slogan, demonstration video gallery, testimonials and final CTA.</p><button class="btn btn-sm" onclick="openContentEditor('Homepage')">Edit Page</button></div><div class="content-card"><h3>Gym Membership</h3><p>Equipment gallery, benefits, descriptions, membership CTA and FAQ.</p><button class="btn btn-sm" onclick="openContentEditor('Gym Membership')">Edit Page</button></div><div class="content-card"><h3>Personal Training</h3><p>Coaching copy, trainer profiles, qualifications and owner-routed CTA.</p><button class="btn btn-sm" onclick="openContentEditor('Personal Training')">Edit Page</button></div><div class="content-card"><h3>About Chau</h3><p>Owner story, journey, qualifications and mission.</p><button class="btn btn-sm" onclick="openContentEditor('About Chau')">Edit Page</button></div><div class="content-card"><h3>Testimonials</h3><p>Client quote, display name, photo permission and visibility.</p><button class="btn btn-sm" onclick="openContentEditor('Testimonials')">Manage</button></div><div class="content-card"><h3>Media Library</h3><p>Upload photo/video, title, thumbnail, page placement and published status.</p><button class="btn btn-sm" onclick="openContentEditor('Media Library')">Manage</button></div></div></section>
+
+<!-- TRAINER DASHBOARD -->
+<section id="trainer-dashboard" class="portal-page"><div class="page-head"><div><h1>Dashboard</h1></div></div><div class="panel dashboard-calendar"><div class="page-head dashboard-calendar-head" style="margin-bottom:8px"><div><h3>My Calendar</h3></div><div class="view-switch"><button id="trainerDashWeekBtn" class="active" onclick="setDashboardCalendar('trainer','week')">Week</button><button id="trainerDashMonthBtn" onclick="setDashboardCalendar('trainer','month')">Month</button></div></div><div class="calendar-toolbar compact-calendar-toolbar"><div class="actions calendar-nav-actions"><button class="btn btn-sm" onclick="moveDashboardCalendar('trainer',-1)" aria-label="Previous period">←</button><button class="btn btn-sm calendar-period-btn" id="trainerDashCalendarPeriod" onclick="goDashboardCalendarToday('trainer')">24–30 Aug 2026</button><button class="btn btn-sm" onclick="moveDashboardCalendar('trainer',1)" aria-label="Next period">→</button></div></div><div id="trainerDashCalendarGrid"></div></div></section>
+
+<!-- TRAINER CLIENTS -->
+<section id="trainer-clients" class="portal-page">
+  <div class="page-head">
+    <div>
+      <h1>Clients</h1>
+      <p>Assigned clients</p>
+    </div>
+  </div>
+  <div class="stats trainer-page-stats trainer-client-page-stats"><div class="stat"><div class="stat-label">ASSIGNED CLIENTS</div><div class="stat-value" id="trainerAssignedClientsStat">0</div></div></div>
+  <div class="toolbar">
+    <input id="trainerClientSearch" placeholder="Search client" oninput="renderTrainerClients()">
+    <select id="trainerClientType" onchange="renderTrainerClients()">
+      <option value="">All types</option>
+      <option>Individual</option>
+      <option>Couple</option>
+    </select>
+    <select disabled>
+      <option>Assigned to Marcus Tan</option>
+    </select>
+  </div>
+  <div class="table-wrap fit-list-wrap">
+    <table class="fit-list-table client-list-table">
+      <thead>
+        <tr>
+          <th>Client</th>
+          <th>Type</th>
+          <th>Package / Goal</th>
+          <th>Assigned Trainer</th>
+          <th>Last Trained</th>
+          <th>Renewal</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="trainerClientRows"></tbody>
+    </table>
+  </div>
+</section>
+<section id="trainer-client" class="portal-page"></section>
+
+<!-- TRAINER SESSIONS / PLAN / COMPLETE -->
+<section id="trainer-sessions" class="portal-page">
+  <div class="page-head">
+    <div>
+      <h1>Sessions</h1>
+      
+    </div>
+  </div>
+  <div class="stats trainer-page-stats trainer-session-page-stats"><div class="stat"><div class="stat-label">TODAY</div><div class="stat-value" id="trainerTodaySessionsStat">0</div><span class="pill blue">Sessions</span></div><div class="stat"><div class="stat-label">NOT PLANNED</div><div class="stat-value" id="trainerNotPlannedStat">0</div><span class="pill amber">Action required</span></div></div>
+  <div class="toolbar">
+    <input id="trainerSessionSearch" placeholder="Search client" oninput="renderTrainerAllSessions()">
+    <input id="trainerSessionDateFilter" type="text" placeholder="Date" inputmode="none" aria-label="Date" onfocus="activateDateFilter(this)" onclick="activateDateFilter(this)" onblur="deactivateDateFilter(this)" onchange="renderTrainerAllSessions()">
+    <select id="trainerSessionStatusFilter" onchange="renderTrainerAllSessions()">
+      <option value="">All statuses</option>
+      <option>Not planned</option>
+      <option>Planned</option>
+      <option>Completed</option>
+    </select>
+  </div>
+  <div class="table-wrap fit-list-wrap">
+    <table class="fit-list-table trainer-session-list-table">
+      <thead><tr><th>Date</th><th>Client</th><th>Type</th><th>Status</th><th></th></tr></thead>
+      <tbody id="trainerSessionRows"></tbody>
+    </table>
+  </div>
+  
+</section>
+<section id="trainer-plan" class="portal-page"><div class="page-head"><div><h1>Session Plan</h1><p><span id="planClient">Daniel Koh</span> • <span id="planType">Individual</span> • Next session</p></div><button class="btn" onclick="openCopyPreviousPlanModal()">Copy Plan</button></div><div id="coupleNotice" class="hidden"></div><div class="panel"><div class="page-head"><div><h3>Exercise Plan</h3><p>Exercises and session targets</p></div><button class="btn btn-sm btn-blue" onclick="addExercise()">Add Exercise</button></div><div class="planner-row muted"><strong>EXERCISE</strong><strong>SETS</strong><strong>REPS</strong><strong>LOAD</strong><strong>REST</strong><strong>MEDIA</strong></div><div id="exerciseRows"></div><button class="btn btn-sm" onclick="addCustomExercise()">Add Custom Exercise</button></div><div class="grid-equal" style="margin-top:16px"><div class="panel"><h3>Session Focus & Cues</h3><textarea placeholder="Warm-up, focus, coaching cues and progression intention"></textarea></div><div class="panel"><h3>Client Notes</h3><label><input type="checkbox" style="width:auto"> Health notes reviewed</label></div></div><div class="actions" style="justify-content:flex-end;margin-top:16px"><button class="btn" onclick="saveTrainerPlanDraft()">Save Draft</button><button class="btn" onclick="saveActiveSessionPlan()">Save Session Plan</button></div></section>
+<section id="trainer-complete" class="portal-page">
+  <div class="page-head session-main-head">
+    <div>
+      <h1>Session Details</h1>
+      <p id="trainerSessionMeta" class="hidden"></p>
+    </div>
+    <div class="session-main-head-right">
+      <div class="header-edit-actions session-header-edit-actions">
+        <button id="ownerSessionHeaderEditBtn" class="header-edit-icon hidden" onclick="toggleOwnerSessionEdit()" title="Edit session" aria-label="Edit session">Edit</button>
+        <button id="ownerSessionCancelBtn" class="header-cancel-btn hidden" onclick="cancelOwnerSessionEdit()">Cancel</button>
+        <div id="trainerSessionRequestActions" class="trainer-session-request-actions hidden">
+          <button class="btn btn-sm" onclick="openSessionTimeRequestV29()">Request Time Change</button>
+          <button class="btn btn-sm" onclick="openSessionTrainerRequestV29()">Request Trainer Change</button>
+        </div>
+      </div>
+      <div class="session-status-cluster">
+      <div class="session-status-item">
+        <span class="session-status-label">SESSION</span>
+        <div id="trainerSessionHeaderStatus"><span class="pill blue">Planned</span></div>
+      </div>
+      <div class="session-status-item">
+        <span class="session-status-label">ACKNOWLEDGEMENT</span>
+        <div id="trainerSessionAckStatus"><span class="pill amber">Pending</span></div>
+      </div>
+      <div class="session-status-item">
+        <span class="session-status-label">WHATSAPP</span>
+        <div id="trainerSessionWhatsappStatus"><span class="muted">Not sent</span></div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats session-detail-summary">
+    <div class="stat"><div class="stat-label">CLIENT</div><div class="stat-value session-detail-value" id="trainerSessionClient">Amanda Lim</div></div>
+    <div class="stat"><div class="stat-label">DATE & TIME</div><div class="stat-value session-detail-value" id="trainerSessionDateTime">25 Aug 2026 • 7:00pm–8:00pm</div><div id="sessionDateTimeInline" class="session-inline-fields session-time-range-fields hidden"><label><span>Date</span><input id="sessionDateInline" type="date"></label><label><span>From</span><input id="sessionTimeInline" type="time"></label><label><span>To</span><input id="sessionEndTimeInline" type="time"></label></div></div>
+    <div class="stat"><div class="stat-label">TRAINER</div><div class="stat-value session-detail-value" id="trainerSessionTrainer">Marcus Tan</div><select id="sessionTrainerInline" class="inline-edit-control hidden"></select><label id="sessionNotifyTrainerRow" class="session-notify-trainer hidden"><input id="sessionNotifyTrainerCheckbox" type="checkbox" checked> Inform trainer of this change</label></div>
+    <div class="stat"><div class="stat-label">TYPE / PACKAGE</div><div class="stat-value session-detail-value" id="trainerSessionType">Individual • 4/12</div></div>
+  </div>
+
+  <div class="panel" id="sessionExercisePlanPanel">
+    <div class="page-head session-plan-head" style="margin-bottom:12px">
+      <div>
+        <h3>Exercise Plan</h3>
+        
+      </div>
+
+      <div id="sessionPlanViewActions" class="header-edit-actions hidden">
+        <button class="btn btn-sm header-action-edit" id="editSessionPlanBtn" onclick="editSessionExercisePlan()">Edit</button>
+      </div>
+
+      <div id="sessionPlanEditActions" class="session-plan-edit-controls hidden">
+        <button class="btn btn-sm" id="addSessionExerciseBtn" onclick="addSessionExercise()">Add Exercise</button>
+        <button class="btn btn-sm btn-blue" id="saveSessionPlanBtn" onclick="confirmSaveSessionExercisePlan()">Save</button>
+        <button class="header-cancel-btn small" id="cancelSessionPlanBtn" onclick="cancelSessionPlanEdit()">Cancel</button>
+      </div>
+    </div>
+
+    <div id="sessionPlanStartState" class="session-plan-start hidden">
+      <button class="session-plan-start-btn" onclick="startNewSessionExercisePlan()">
+        <span class="session-plan-start-plus">＋</span>
+        <strong>Start New Plan</strong>
+        <small>Add exercises, optional details, weight, reps, rounds and rest</small>
+      </button>
+    </div>
+
+    <div id="sessionExercisePlanContent">
+      <div id="sessionExerciseHeader" class="session-exercise-header muted hidden">
+        <strong>EXERCISE & OPTIONAL DETAILS</strong><strong>WEIGHT</strong><strong>REPS</strong><strong>ROUNDS</strong><strong>REST</strong><strong></strong>
+      </div>
+      <div id="sessionExerciseRows"></div>
+      <div id="sessionExerciseEmpty" class="empty-plan-state hidden">
+        No exercises added.
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-equal session-outcome-grid" style="margin-top:16px">
+    <div class="panel">
+      <div class="edit-section-head"><h3>Session Outcome</h3><div class="header-edit-actions"><button id="sessionOutcomeEditBtn" class="header-edit-icon small" onclick="toggleSessionOutcomeEdit()" title="Edit session outcome" aria-label="Edit session outcome">Edit</button><button id="sessionOutcomeCancelBtn" class="header-cancel-btn small hidden" onclick="cancelSessionOutcomeEdit()">Cancel</button></div></div>
+      <div id="sessionOutcomeView" class="info compact-outcome-view"><div class="info-row"><span>Duration</span><strong id="sessionDurationDisplay">60 minutes</strong></div><div class="info-row"><span>Trainer comments</span><strong id="sessionTrainerCommentsDisplay">Load progressed with consistent technique.</strong></div></div>
+      <div id="sessionOutcomeEditFields" class="hidden"><div class="field"><label>DURATION</label><input id="sessionDurationInput" value="60 minutes" oninput="updateClientFacingSummary(true)"></div><div class="field"><label>TRAINER COMMENTS</label><textarea id="sessionTrainerCommentsInput" placeholder="Progress, technique, concerns or changes">Load progressed with consistent technique.</textarea></div></div>
+    </div>
+    <div class="panel">
+      <div class="edit-section-head"><h3>Client-Facing Summary</h3><div class="header-edit-actions"><button id="clientSummaryEditBtn" class="header-edit-icon small" onclick="toggleClientSummaryEdit()" title="Edit client-facing summary" aria-label="Edit client-facing summary">Edit</button><button id="clientSummaryCancelBtn" class="header-cancel-btn small hidden" onclick="cancelClientSummaryEdit()">Cancel</button></div></div>
+      <div id="clientOutcomeDisplay" class="client-summary-display"></div>
+      <textarea id="clientOutcomeText" class="client-summary-auto hidden"></textarea>
+      <div class="inline-note">Automatically generated from the exercise plan and session duration. Use edit only when you need to adjust the wording before sharing.</div>
+    </div>
+  </div>
+
+  <div class="session-delivery-strip" style="margin-top:12px">
+    <button class="btn btn-sm btn-blue session-delivery-btn" id="clientSignButton" onclick="openSignatureModal()" disabled>Acknowledge Session</button>
+    <button class="btn btn-sm btn-whatsapp session-delivery-btn" id="sendWhatsAppBtn" onclick="sendSessionWhatsapp(activeSessionId,document.getElementById('trainerSessionClient').textContent)" disabled>WhatsApp Client</button>
+  </div>
+</section>
+<section id="trainer-remuneration" class="portal-page">
+  <div class="page-head">
+    <div>
+      <h1>Remuneration</h1>
+      <p>Monthly remuneration history</p>
+    </div>
+  </div>
+  <div class="table-wrap fit-list-wrap">
+    <table class="fit-list-table remuneration-list-table">
+      <thead>
+        <tr><th>Pay Cycle</th><th>Completed Sessions</th><th>Training Hours</th><th>Remuneration</th><th>Status</th><th></th></tr>
+      </thead>
+      <tbody id="trainerRemunerationMonthRows"></tbody>
+    </table>
+  </div>
+</section>
+
+<section id="owner-profile" class="portal-page account-profile-page">
+  <div class="page-head"><div><h1>My Account</h1></div></div>
+  <div class="panel profile account-profile-card">
+    <div class="portal-avatar">CH</div>
+    <div><h2 style="margin:0">Chau</h2><p class="muted">Owner / Site Admin</p></div>
+    <span class="pill green">ACTIVE ACCOUNT</span>
+  </div>
+  <div class="panel account-details-panel" style="margin-top:16px">
+    <h3>Account Details</h3>
+    <div class="info">
+      <div class="info-row"><span>Name</span><strong>Chau</strong></div>
+      <div class="info-row"><span>Email</span><strong>owner@fitfinity.sg</strong></div>
+      <div class="info-row"><span>Role</span><strong>Owner / Site Admin</strong></div>
+    </div>
+    <div class="account-actions">
+      <button class="btn" onclick="openChangePasswordModal()">Change Password</button>
+      <button class="btn btn-danger" onclick="logout()">Sign Out</button>
+    </div>
+  </div>
+</section>
+
+<section id="trainer-profile" class="portal-page account-profile-page">
+  <div class="page-head"><div><h1>My Account</h1></div></div>
+
+  <div class="panel profile account-profile-card">
+    <div class="portal-avatar">MT</div>
+    <div><h2 style="margin:0">Marcus Tan</h2><p class="muted">Strength & Conditioning Coach</p></div>
+    <span class="pill green">ACTIVE ACCOUNT</span>
+  </div>
+
+  <div class="tabs trainer-self-tabs" style="margin-top:16px">
+    <button class="active" onclick="trainerSelfTab(this,'trainerSelfOverview')">Overview</button>
+    <button onclick="trainerSelfTab(this,'trainerSelfAvailability')">Availability</button>
+  </div>
+
+  <div id="trainerSelfOverview" class="trainer-self-tab">
+    <div class="panel account-details-panel">
+      <h3>Account Details</h3>
+      <div class="info">
+        <div class="info-row"><span>Email</span><strong id="trainerSelfEmail">trainer@fitfinity.sg</strong></div>
+        <div class="info-row"><span>Mobile number</span><strong id="trainerSelfPhone">+65 9123 8877</strong></div>
+        <div class="info-row"><span>Gender</span><strong id="trainerSelfGender">Male</strong></div>
+        <div class="info-row"><span>Qualifications</span><strong>NSCA, CPR/AED</strong></div>
+        <div class="info-row"><span>Peak session rate</span><strong class="sensitive-rate"><span id="trainerPeakRateValue" data-value="$80 / session">••••••</span><button class="rate-eye-btn" onclick="toggleTrainerRate('trainerPeakRateValue',this)" aria-label="Show peak session rate">👁</button></strong></div>
+        <div class="info-row"><span>Off-peak session rate</span><strong class="sensitive-rate"><span id="trainerOffpeakRateValue" data-value="$55 / session">••••••</span><button class="rate-eye-btn" onclick="toggleTrainerRate('trainerOffpeakRateValue',this)" aria-label="Show off-peak session rate">👁</button></strong></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="trainerSelfAvailability" class="trainer-self-tab hidden">
+    <div class="panel">
+      <div class="page-head account-availability-head" style="margin-bottom:12px">
+        <div><h3>Approved Availability</h3></div>
+        <button class="btn btn-blue" onclick="openTrainerAvailabilityRequest()">Request Change</button>
+      </div>
+      <div id="trainerSelfAvailabilityGrid" class="availability-compact-list"></div>
+    </div>
+  </div>
+
+  <div class="account-actions account-actions-bottom">
+    <button class="btn" onclick="openChangePasswordModal()">Change Password</button>
+    <button class="btn btn-danger" onclick="logout()">Sign Out</button>
+  </div>
+</section>
+</div></section></div></div>
+
+<!-- MODALS -->
+<div id="videoModal" class="modal-bg"><div class="modal"><div class="modal-head"><h3 id="videoTitle">Video</h3><button class="modal-close" onclick="closeModal('videoModal')">✕</button></div><div style="height:340px;background:linear-gradient(135deg,#1a1d25,#07080c);display:grid;place-items:center;margin-top:16px;border:1px solid #454a55;border-radius:7px;font-size:56px">▶</div><p class="muted">Video playback placeholder. Closing returns to the same page position.</p></div></div>
+<div id="galleryModal" class="modal-bg"><div class="modal"><div class="modal-head"><h3>Gym Gallery Image</h3><button class="modal-close" onclick="closeModal('galleryModal')">✕</button></div><div id="galleryLarge" style="height:480px;background-size:cover;background-position:center;margin-top:16px;border-radius:7px"></div></div></div>
+<div id="tourModal" class="modal-bg"><div class="modal"><div class="modal-head"><h3>Book A Free Tour / Contact</h3><button class="modal-close" onclick="closeModal('tourModal')">✕</button></div><div class="form-grid"><div class="field"><label>NAME</label><input></div><div class="field"><label>PHONE</label><input></div></div><div class="field"><label>EMAIL</label><input type="email"></div><div class="field"><label>PREFERRED DATE / MESSAGE</label><textarea></textarea></div><button class="btn btn-blue" onclick="closeModal('tourModal');toast('Enquiry submitted.')">Submit Enquiry</button></div></div>
+<div id="glofoxModal" class="modal-bg"><div class="modal"><div class="modal-head"><h3>External Glofox Handoff</h3><button class="modal-close" onclick="closeModal('glofoxModal')">✕</button></div><p>You selected <strong id="glofoxPlan"></strong>. In production this opens Glofox in a new tab, with the selected plan prefilled where supported.</p><button class="btn btn-blue" onclick="closeModal('glofoxModal')">Continue to Glofox</button></div></div>
+<div id="whatsappModal" class="modal-bg"><div class="modal"><div class="modal-head"><h3>WhatsApp Owner</h3><button class="modal-close" onclick="closeModal('whatsappModal')">✕</button></div><p>Production behaviour: open WhatsApp to 9772 3345 with this prefilled message:</p><button class="btn btn-blue" onclick="confirmWhatsappSend()">Open WhatsApp</button></div></div>
+<div id="clientModal" class="modal-bg"><div class="modal"><div class="modal-head"><h3>Add Client</h3><button class="modal-close" onclick="closeModal('clientModal')">✕</button></div>
+<div class="field"><label>CLIENT TYPE</label><select id="newClientType" onchange="handleClientTypeChangeV36(this.value)"><option>Individual</option><option>Couple</option></select></div>
+<div id="clientGeneralSectionV36" class="client-general-section-v36">
+  <div class="client-general-banner-v36 client-general-banner-clean-v38"><div class="client-general-icon-v36">01</div><div><span class="client-general-kicker-v36">GENERAL INFORMATION</span></div></div>
+  <div id="coupleGeneralTabsV36" class="couple-general-tabs-v36 hidden" role="tablist" aria-label="Couple client information tabs">
+    <button id="coupleClient1TabV36" class="active" type="button" onclick="setCoupleClientTabV36(1)"><span>Client 1</span><small id="coupleClient1TabStatusV36"></small></button>
+    <div class="couple-tab-arrow-v36" aria-hidden="true">→</div>
+    <button id="coupleClient2TabV36" type="button" onclick="setCoupleClientTabV36(2)"><span>Client 2</span><small id="coupleClient2TabStatusV36"></small><b class="couple-tab-cue-v36"></b></button>
+  </div>
+
+  <div id="clientOneGeneralPanelV36" class="couple-general-panel-v36 active">
+    <div class="form-grid"><div class="field"><label>NAME</label><input id="newClientName" placeholder="Client name" oninput="updateCoupleTabCueV36()"></div><div class="field"><label>PHONE</label><div class="phone-input-group"><select id="newClientPhoneCountry" class="phone-country"><option value="+65" selected>+65</option><option value="+60">+60</option><option value="+62">+62</option><option value="+63">+63</option><option value="+66">+66</option><option value="+61">+61</option><option value="+44">+44</option><option value="+1">+1</option></select><input id="newClientPhone" placeholder="9123 4567" inputmode="tel" oninput="updateCoupleTabCueV36()"></div></div></div>
+    <div class="form-grid"><div class="field"><label>EMAIL</label><input id="newClientEmail" type="email" placeholder="Email address" oninput="updateCoupleTabCueV36()"></div><div class="field"><label>AGE</label><input id="newClientAge" type="number" min="12" max="100" placeholder="Age" oninput="updateCoupleTabCueV36()"></div></div>
+    <div class="field"><label>GENDER</label><select id="newClientGender" onchange="updateCoupleTabCueV36()"><option value="">Select gender</option><option>Female</option><option>Male</option><option>Prefer not to say</option></select></div>
+    <div class="form-grid"><div class="field"><label>EMERGENCY CONTACT NAME</label><input id="newClientEmergencyName" placeholder="Contact name" oninput="updateCoupleTabCueV36()"></div><div class="field"><label>EMERGENCY CONTACT PHONE</label><div class="phone-input-group"><select id="newClientEmergencyPhoneCountry" class="phone-country"><option value="+65" selected>+65</option><option value="+60">+60</option><option value="+62">+62</option><option value="+63">+63</option><option value="+66">+66</option><option value="+61">+61</option><option value="+44">+44</option><option value="+1">+1</option></select><input id="newClientEmergencyPhone" placeholder="9000 1122" inputmode="tel" oninput="updateCoupleTabCueV36()"></div></div></div>
+    <div class="field"><label>HEALTH / LIMITATION NOTES</label><textarea id="newClientHealthV36" placeholder="Injuries, medical considerations, movement limitations or anything the trainer should know" oninput="updateCoupleTabCueV36()"></textarea></div>
+  </div>
+
+  <div id="clientTwoGeneralPanelV36" class="couple-general-panel-v36 hidden">
+    
+    <div class="form-grid"><div class="field"><label>NAME</label><input id="newClient2NameV36" placeholder="Second client name" oninput="updateCoupleTabCueV36()"></div><div class="field"><label>PHONE</label><div class="phone-input-group"><select id="newClient2PhoneCountryV36" class="phone-country"><option value="+65" selected>+65</option><option value="+60">+60</option><option value="+62">+62</option><option value="+63">+63</option><option value="+66">+66</option><option value="+61">+61</option><option value="+44">+44</option><option value="+1">+1</option></select><input id="newClient2PhoneV36" placeholder="9123 4567" inputmode="tel" oninput="updateCoupleTabCueV36()"></div></div></div>
+    <div class="form-grid"><div class="field"><label>EMAIL</label><input id="newClient2EmailV36" type="email" placeholder="Email address" oninput="updateCoupleTabCueV36()"></div><div class="field"><label>AGE</label><input id="newClient2AgeV36" type="number" min="12" max="100" placeholder="Age" oninput="updateCoupleTabCueV36()"></div></div>
+    <div class="field"><label>GENDER</label><select id="newClient2GenderV36" onchange="updateCoupleTabCueV36()"><option value="">Select gender</option><option>Female</option><option>Male</option><option>Prefer not to say</option></select></div>
+    <div class="form-grid"><div class="field"><label>EMERGENCY CONTACT NAME</label><input id="newClient2EmergencyNameV36" placeholder="Contact name" oninput="updateCoupleTabCueV36()"></div><div class="field"><label>EMERGENCY CONTACT PHONE</label><div class="phone-input-group"><select id="newClient2EmergencyPhoneCountryV36" class="phone-country"><option value="+65" selected>+65</option><option value="+60">+60</option><option value="+62">+62</option><option value="+63">+63</option><option value="+66">+66</option><option value="+61">+61</option><option value="+44">+44</option><option value="+1">+1</option></select><input id="newClient2EmergencyPhoneV36" placeholder="9000 1122" inputmode="tel" oninput="updateCoupleTabCueV36()"></div></div></div>
+    <div class="field"><label>HEALTH / LIMITATION NOTES</label><textarea id="newClient2HealthV36" placeholder="Injuries, medical considerations, movement limitations or anything the trainer should know" oninput="updateCoupleTabCueV36()"></textarea></div>
+  </div>
+
+  <div class="field client-overall-remarks-v36"><label>OVERALL REMARKS</label><textarea id="newClientRemarksV36" placeholder="Shared onboarding remarks for this client / couple package"></textarea></div>
+</div>
+<div class="form-grid"><div class="field"><label>PT PACKAGE</label><select id="newClientPackage"><option value="12">12 sessions</option><option value="24">24 weeks</option></select></div><div class="field"><label>START DATE</label><input id="newClientStartDate" type="date" value="2026-08-29"></div></div><div class="field paid-field"><label>PAYMENT</label><label class="paid-checkbox-row"><input id="newClientPaid" type="checkbox"><span>Paid</span></label></div>
+<div class="field"><label>WEEKLY FREQUENCY</label><div class="fixed-frequency-switch">
+<label class="fixed-frequency-option"><input type="radio" name="clientWeeklyFrequency" value="single" checked onchange="setClientWeeklyFrequency('single')"><span>Single Day</span></label>
+<label class="fixed-frequency-option"><input type="radio" name="clientWeeklyFrequency" value="double" onchange="setClientWeeklyFrequency('double')"><span>Double Day</span></label>
+</div></div>
+<div class="form-grid onboarding-preference-grid"><div class="field"><label>GYM MEMBERSHIP</label><label class="gym-membership-toggle"><input type="checkbox" id="clientIncludeGymMembership"><span id="clientGymMembershipText">Optional</span></label><div class="inline-note hidden" id="clientGymMembershipNote"></div></div><div class="field"><label>TRAINER PREFERENCE</label><label class="gym-membership-toggle"><input type="checkbox" id="clientFemaleTrainerPreferred"><span>Female trainer preferred</span></label></div></div>
+<div class="field"><label>PT GOALS / COACHING NOTES</label><textarea id="newClientGoals" placeholder="Shared PT goals, coaching focus or package-level notes"></textarea></div>
+
+<div id="clientAvailabilityPanel" class="panel" style="margin:12px 0"><h3>Availability</h3>
+<div id="clientAvailabilityBuilder" class="availability-builder client-availability-entry">
+  <div class="client-availability-days-row">
+    <div class="day-picker"><label style="font-size:11px;font-weight:850">POSSIBLE DAYS</label>
+      <div class="day-selector">
+        <label class="day-chip"><input type="checkbox">Mon</label><label class="day-chip"><input type="checkbox">Tue</label><label class="day-chip"><input type="checkbox">Wed</label><label class="day-chip"><input type="checkbox">Thu</label><label class="day-chip"><input type="checkbox">Fri</label><label class="day-chip"><input type="checkbox">Sat</label><label class="day-chip"><input type="checkbox">Sun</label>
+      </div>
+    </div>
+  </div>
+  <div class="client-availability-time-row">
+    <div class="field"><label>FROM</label><input id="clientAvailabilityFrom" type="time" value="18:00"></div>
+    <div class="field"><label>TO</label><input id="clientAvailabilityTo" type="time" value="19:00"></div>
+    <button class="btn btn-blue" onclick="addClientAvailabilityBlock(this)">Add Time</button>
+  </div>
+  <div id="clientAvailabilityBlocks" class="block-list"></div>
+</div>
+
+</div>
+
+<div id="clientMatchPanel" class="client-match-stage">
+<div class="client-onboard-stage-title">Trainer Match</div>
+<div class="client-match-actions"><div class="field"><label>MATCHING TRAINER</label><select id="availableTrainerSelect" disabled onchange="renderMatchedSlotsForTrainer()"><option>Add availability options first</option></select></div><button class="btn btn-blue" onclick="findMatchingTrainers()">Find Matching Trainers</button></div>
+<div id="trainerMatchText" class="match-box"></div>
+<div id="clientMatchedSlots" class="client-matched-slots"></div>
+<div class="fixed-schedule-lock-row"><button id="saveClientAssignmentBtn" class="btn btn-blue hidden" onclick="saveClientAssignment()">Save Trainer + Fixed Schedule</button><button id="editClientAssignmentBtn" class="btn hidden" onclick="editClientAssignment()">Edit Saved Assignment</button></div>
+<div id="clientFinalAssignmentSummary" class="client-assignment-summary"></div>
+</div>
+<div class="actions client-onboard-actions"><button class="btn" onclick="resetClientOnboardingSchedule()">Reset Availability</button><button class="btn btn-blue" onclick="createClientFromModal()">Create Client</button></div>
+</div></div>
+<div id="editClientModal" class="modal-bg"><div class="modal"><div class="modal-head"><h3>Edit Client</h3><button class="modal-close" onclick="closeModal('editClientModal')">✕</button></div><div class="form-grid"><div class="field"><label>EMAIL</label><input id="editClientEmail" value="amanda@example.com"></div><div class="field"><label>PHONE</label><div class="phone-input-group"><select id="editClientPhoneCountry" class="phone-country"><option value="+65" selected>+65</option><option value="+60">+60</option><option value="+62">+62</option><option value="+63">+63</option><option value="+66">+66</option><option value="+61">+61</option><option value="+44">+44</option><option value="+1">+1</option></select><input id="editClientPhone" value="9123 4567" inputmode="tel"></div></div></div><div class="field"><label>HEALTH / LIMITATION NOTES</label><textarea id="editClientHealthNotes">Previous right-knee discomfort. Check current symptoms before lower-body loading. Avoid sudden high-impact volume increases.</textarea></div><button class="btn btn-blue" onclick="saveClientEdit()">Save Changes</button></div></div>
+<div id="trainerModal" class="modal-bg"><div class="modal"><div class="modal-head"><h3>Add Trainer</h3><button class="modal-close" onclick="closeModal('trainerModal')">✕</button></div><div class="form-grid"><div class="field"><label>NAME</label><input id="newTrainerName"></div><div class="field"><label>EMAIL</label><input id="newTrainerEmail" type="email"></div></div><div class="form-grid"><div class="field"><label>MOBILE NUMBER</label><div class="phone-input-group"><select id="newTrainerPhoneCountry" class="phone-country"><option value="+65" selected>+65</option><option value="+60">+60</option><option value="+62">+62</option><option value="+63">+63</option><option value="+66">+66</option><option value="+61">+61</option><option value="+44">+44</option><option value="+1">+1</option></select><input id="newTrainerPhone" type="tel" placeholder="9123 4567"></div></div><div class="field"><label>GENDER</label><select id="newTrainerGender"><option value="">Select gender</option><option>Female</option><option>Male</option><option>Prefer not to say</option></select></div></div><div class="form-grid"><div class="field"><label>SPECIALTY</label><input id="newTrainerSpecialty" placeholder="Strength & Conditioning"></div><div class="field"><label>PUBLIC PROFILE</label><select id="newTrainerPublic"><option>Visible</option><option>Hidden</option></select></div></div><div class="field"><label>QUALIFICATIONS</label><textarea id="newTrainerQualifications"></textarea></div><div class="panel" style="margin:12px 0"><h3>Session Rates</h3><div class="rate-grid"><div class="field"><label>PEAK RATE / SESSION</label><input id="newTrainerPeakRate" type="number" value="80" min="0"></div><div class="field"><label>OFF-PEAK RATE / SESSION</label><input id="newTrainerOffpeakRate" type="number" value="55" min="0"></div></div></div><div class="panel" style="margin:12px 0"><h3>Availability</h3><div class="availability-builder"><div class="availability-builder-row"><div class="day-picker"><label style="font-size:11px;font-weight:850">DAYS</label><div class="day-selector"><label class="day-chip"><input type="checkbox" checked>Mon</label><label class="day-chip"><input type="checkbox" checked>Tue</label><label class="day-chip"><input type="checkbox" checked>Wed</label><label class="day-chip"><input type="checkbox" checked>Thu</label><label class="day-chip"><input type="checkbox" checked>Fri</label><label class="day-chip"><input type="checkbox">Sat</label><label class="day-chip"><input type="checkbox">Sun</label></div></div><div class="field"><label>FROM</label><input type="time" value="18:00"></div><div class="field"><label>TO</label><input type="time" value="19:00"></div><button class="btn btn-blue" onclick="addAvailabilityBlock(this)">Add Time</button></div><div id="newTrainerAvailabilityBlocks" class="block-list"><div class="block-row" data-days="Mon,Tue,Wed,Thu,Fri" data-from="18:00" data-to="19:00"><div><strong>Mon, Tue, Wed, Thu, Fri</strong><br><small>6:00pm–7:00pm</small></div><button class="btn btn-sm btn-danger" onclick="this.closest('.block-row').remove()">Remove</button></div></div></div></div><div class="actions trainer-onboard-actions-v40"><button id="trainerOnboardingResetAvailabilityV26" type="button" class="btn" onclick="resetTrainerOnboardingAvailabilityV26()">Reset Availability</button><button class="btn btn-blue" onclick="createTrainerFromModal()">Create Trainer</button></div></div></div>
+<div id="exerciseModal" class="modal-bg"><div class="modal"><div class="modal-head"><h3>Add Approved Exercise</h3><button class="modal-close" onclick="closeModal('exerciseModal')">✕</button></div><div class="field"><label>EXERCISE NAME</label><input id="newLibraryExerciseName"></div><div class="field"><label>CATEGORY</label><select id="newLibraryExerciseCategory"><option>Full Body</option><option>Upper Body</option><option>Core</option><option>Lower Body</option><option>Single Leg</option><option>Cardio</option></select></div><div class="field"><label>DESCRIPTION</label><textarea id="newLibraryExerciseDescription"></textarea></div><div class="field"><label>PHOTO / VIDEO</label><input id="newLibraryExerciseMedia" type="file" accept="video/*,image/*"></div><button class="btn btn-blue" onclick="addExerciseLibraryItem()">Add Exercise</button></div></div>
+<div id="exerciseEditModal" class="modal-bg"><div class="modal"><div class="modal-head"><h3>Edit Exercise</h3><button class="modal-close" onclick="closeModal('exerciseEditModal')">✕</button></div><input type="hidden" id="editExerciseRowIndex"><div class="field"><label>EXERCISE NAME</label><input id="editLibraryExerciseName"></div><div class="form-grid"><div class="field"><label>CATEGORY</label><select id="editLibraryExerciseCategory"><option>Full Body</option><option>Upper Body</option><option>Core</option><option>Lower Body</option><option>Single Leg</option><option>Cardio</option></select></div><div class="field"><label>STATUS</label><select id="editLibraryExerciseStatus"><option>Active</option><option>Inactive</option></select></div></div><div class="field"><label>DESCRIPTION</label><textarea id="editLibraryExerciseDescription" placeholder="Optional coaching/library description"></textarea></div><div class="exercise-library-edit-media"><strong id="editLibraryExerciseMediaState">Current media: Video</strong><div class="field" style="margin:10px 0 0"><label>REPLACE PHOTO / VIDEO</label><input id="editLibraryExerciseMedia" type="file" accept="video/*,image/*"></div><label style="font-size:11px"><input id="editLibraryRemoveMedia" type="checkbox" style="width:auto"> Remove current media</label></div><div class="actions" style="justify-content:flex-end;margin-top:14px"><button class="btn" onclick="closeModal('exerciseEditModal')">Cancel</button><button class="btn btn-blue" onclick="saveExerciseLibraryEdit()">Save Changes</button></div></div></div>
+<div id="contentModal" class="modal-bg"><div class="modal"><div class="modal-head"><h3 id="contentEditorTitle">Fixed-Layout Content Editor</h3><button class="modal-close" onclick="closeModal('contentModal')">✕</button></div><div class="field"><label>PAGE HEADING</label><input id="contentHeading" value="Move Better. Get Stronger."></div><div class="field"><label>BODY COPY</label><textarea id="contentBody">Trainer-led coaching in a friendly, results-focused studio.</textarea></div><div class="field"><label>REPLACE PHOTO / VIDEO</label><input id="contentMedia" type="file"></div><div class="field"><label>CTA WORDING</label><input id="contentCta" value="Join Gym Membership"></div><div class="actions"><button class="btn" onclick="saveContentDraft()">Save Draft</button><button class="btn btn-blue" onclick="publishContentPage()">Publish</button></div></div></div>
+<div id="contentPublishModal" class="modal-bg"><div class="modal"><div class="modal-head"><h3>Publish Draft Changes</h3><button class="modal-close" onclick="closeModal('contentPublishModal')">✕</button></div><p class="muted">Choose which drafted website areas to publish.</p><div class="quick-list" id="contentPublishChoices"><label class="quick-row"><span>Homepage</span><input type="checkbox" checked style="width:auto"></label><label class="quick-row"><span>Gym Membership</span><input type="checkbox" checked style="width:auto"></label><label class="quick-row"><span>Personal Training</span><input type="checkbox" style="width:auto"></label><label class="quick-row"><span>About Chau</span><input type="checkbox" style="width:auto"></label><label class="quick-row"><span>Testimonials</span><input type="checkbox" style="width:auto"></label><label class="quick-row"><span>Media Library</span><input type="checkbox" style="width:auto"></label></div><div class="actions" style="justify-content:flex-end;margin-top:14px"><button class="btn" onclick="closeModal('contentPublishModal')">Cancel</button><button class="btn btn-blue" onclick="confirmPublishDrafts()">Publish Selected</button></div></div></div>
+<div id="scheduleEditModal" class="modal-bg"><div class="modal"><div class="modal-head"><h3>Edit Session Date / Time</h3><button class="modal-close" onclick="closeModal('scheduleEditModal')">✕</button></div><input type="hidden" id="scheduleEditId"><div class="field"><label>CLIENT</label><input id="scheduleEditClient" disabled></div><div class="form-grid"><div class="field"><label>DATE</label><input id="scheduleEditDate" type="date"></div><div class="field"><label>TIME</label><input id="scheduleEditTime" type="time"></div></div><div class="calendar-detail-actions"><button class="btn" onclick="closeModal('scheduleEditModal')">Cancel</button><button class="btn btn-blue" onclick="saveScheduleEdit()">Save Session Schedule</button></div></div></div>
+
+<div id="ownerDaySessionsModal" class="modal-bg">
+  <div class="modal owner-day-modal">
+    <div class="modal-head">
+      <div>
+        <h3 id="ownerDaySessionsTitle">Day Sessions</h3>
+        <p class="muted" id="ownerDaySessionsSubtitle">0 sessions</p>
+      </div>
+      <button class="modal-close" onclick="closeModal('ownerDaySessionsModal')">✕</button>
+    </div>
+    <div id="ownerDaySessionsRows" class="owner-day-session-list"></div>
+    <div class="actions" style="justify-content:flex-end;margin-top:16px">
+      <button class="btn" onclick="closeModal('ownerDaySessionsModal')">Close</button>
+    </div>
+  </div>
+</div>
+
+<div id="calendarEventModal" class="modal-bg"><div class="modal"><div class="modal-head"><h3>Session Details</h3><button class="modal-close" onclick="closeModal('calendarEventModal')">✕</button></div><div class="calendar-detail-grid"><div class="calendar-detail"><small>DATE</small><strong id="calendarDetailDate">—</strong></div><div class="calendar-detail"><small>TIME</small><strong id="calendarDetailTime">—</strong></div><div class="calendar-detail"><small>CLIENT</small><strong id="calendarDetailClient">—</strong></div><div class="calendar-detail"><small>TRAINER</small><strong id="calendarDetailTrainer">—</strong></div><div class="calendar-detail"><small>STATUS</small><div id="calendarDetailStatus"></div></div><div class="calendar-detail"><small>WHATSAPP</small><div id="calendarDetailWhatsapp"><span class="muted">Not sent</span></div></div></div><div id="calendarDetailActions" class="calendar-detail-actions"></div></div></div>
+<div id="sessionModal" class="modal-bg"><div class="modal"><div class="modal-head"><h3>Completed Session</h3><button class="modal-close" onclick="closeModal('sessionModal')">✕</button></div><div class="table-wrap"><table><thead><tr><th>Exercise</th><th>Sets</th><th>Reps</th><th>Load</th></tr></thead><tbody><tr><td>Smith Machine Squat</td><td>3</td><td>8</td><td>25kg</td></tr><tr><td>Assisted Pull-up</td><td>3</td><td>8</td><td>35kg support</td></tr><tr><td>Dead Bug</td><td>2</td><td>10</td><td>Bodyweight</td></tr></tbody></table></div><div class="notice" style="margin-top:14px">Trainer note: Load progressed with consistent technique.</div><div class="info-row"><span>Client acknowledgement</span><strong><span class="pill green">Completed • Client signed</span></strong></div><div class="info-row"><span>WhatsApp</span><strong><span class="pill green">WhatsApp sent</span> <small class="muted">Resend remains available from trainer session view.</small></strong></div></div></div>
+<div id="reassignModal" class="modal-bg"><div class="modal"><div class="modal-head"><h3>Reassign Session Trainer</h3><button class="modal-close" onclick="closeModal('reassignModal')">✕</button></div><div class="info"><div class="info-row"><span>Session</span><strong id="reassignSessionTime">—</strong></div><div class="info-row"><span>Client</span><strong id="reassignClient">—</strong></div><div class="info-row"><span>Current trainer</span><strong id="reassignCurrentTrainer">—</strong></div></div><div class="field"><label>AVAILABLE TRAINER</label><select id="reassignTrainer"></select></div><div class="field"><label>REASON</label><select><option>Medical leave (MC)</option><option>Urgent leave</option><option>Schedule conflict</option><option>Other</option></select></div><label><input id="notifyReassign" type="checkbox" checked style="width:auto"> Notify replacement trainer and client</label><div class="action-row" style="margin-top:16px"><button class="btn" onclick="closeModal('reassignModal')">Cancel</button><button class="btn btn-blue" onclick="confirmReassignment()">Reassign</button></div></div></div>
+<div id="signatureModal" class="modal-bg"><div class="modal"><div class="modal-head"><h3>Session Acknowledgement</h3><button class="modal-close" onclick="closeModal('signatureModal')">✕</button></div><div class="field"><label>CLIENT</label><input id="signatureClient" value="Amanda Lim" readonly></div><div class="field"><label>CLIENT SIGNATURE</label><canvas id="signaturePad" class="signature-pad"></canvas><div class="signature-help">Sign inside the white box using finger, mouse or stylus.</div></div><div class="actions"><button class="btn btn-sm" onclick="clearSignature()">Clear Signature</button><label style="font-size:11px;align-self:center"><input id="ackConfirm" type="checkbox" style="width:auto"> I confirm this session was completed</label></div><div class="action-row" style="margin-top:16px"><button class="btn" onclick="closeModal('signatureModal')">Cancel</button><button class="btn btn-blue" onclick="confirmClientSignature()">Confirm Acknowledgement</button></div></div></div>
+<div id="availabilityRequestModal" class="modal-bg"><div class="modal"><div class="modal-head"><div><h3>Request Availability Change</h3><p class="muted">Submit your proposed weekly availability for owner approval.</p></div><button class="modal-close" onclick="closeModal('availabilityRequestModal')">✕</button></div>
+  <div class="availability-builder" id="trainerAvailabilityRequestBuilder">
+    <div class="availability-builder-row">
+      <div class="day-picker"><label style="font-size:11px;font-weight:850">DAYS</label><div class="day-selector"><label class="day-chip"><input type="checkbox">Mon</label><label class="day-chip"><input type="checkbox">Tue</label><label class="day-chip"><input type="checkbox">Wed</label><label class="day-chip"><input type="checkbox">Thu</label><label class="day-chip"><input type="checkbox">Fri</label><label class="day-chip"><input type="checkbox">Sat</label><label class="day-chip"><input type="checkbox">Sun</label></div></div>
+      <div class="field"><label>FROM</label><input id="trainerAvailabilityRequestFrom" type="time" value="18:00"></div>
+      <div class="field"><label>TO</label><input id="trainerAvailabilityRequestTo" type="time" value="19:00"></div>
+      <button class="btn btn-blue" onclick="addAvailabilityBlock(this)">Add Time</button>
+    </div>
+    <div id="trainerAvailabilityRequestBlocks" class="block-list"></div>
+  </div>
+  <div class="field"><label>REASON / NOTE (OPTIONAL)</label><textarea id="trainerAvailabilityRequestReason" placeholder="e.g. New work schedule from September"></textarea></div>
+  <div class="actions" style="justify-content:flex-end"><button class="btn" onclick="closeModal('availabilityRequestModal')">Cancel</button><button class="btn btn-blue" onclick="submitTrainerAvailabilityRequest()">Submit To Owner</button></div>
+</div></div>
+<div id="sessionTimeRequestModalV29" class="modal-bg"><div class="modal compact-request-modal"><div class="modal-head"><h3>Request Time Change</h3><button class="modal-close" onclick="closeModal('sessionTimeRequestModalV29')">✕</button></div>
+  <div class="form-grid"><div class="field"><label>DATE</label><input id="requestSessionDateV29" type="date"></div><div class="field"><label>FROM</label><input id="requestSessionFromV29" type="time"></div><div class="field"><label>TO</label><input id="requestSessionToV29" type="time"></div></div>
+  <div class="field"><label>REASON (OPTIONAL)</label><textarea id="requestSessionTimeReasonV29" placeholder="Reason for the change"></textarea></div>
+  <div class="actions request-modal-actions"><button class="btn" onclick="closeModal('sessionTimeRequestModalV29')">Cancel</button><button class="btn btn-blue" onclick="submitSessionTimeRequestV29()">Submit Request</button></div>
+</div></div>
+<div id="sessionTrainerRequestModalV29" class="modal-bg"><div class="modal compact-request-modal"><div class="modal-head"><h3>Request Trainer Change</h3><button class="modal-close" onclick="closeModal('sessionTrainerRequestModalV29')">✕</button></div>
+  <div class="field"><label>REQUESTED TRAINER</label><select id="requestReplacementTrainerV29"></select></div>
+  <div class="field"><label>REASON (OPTIONAL)</label><textarea id="requestTrainerReasonV29" placeholder="Reason for the change"></textarea></div>
+  <div class="actions request-modal-actions"><button class="btn" onclick="closeModal('sessionTrainerRequestModalV29')">Cancel</button><button class="btn btn-blue" onclick="submitSessionTrainerRequestV29()">Submit Request</button></div>
+</div></div>
+<div id="ownerRequestDetailModalV29" class="modal-bg"><div class="modal request-detail-modal"><div class="modal-head"><div><h3 id="ownerRequestDetailTitleV29">Request</h3><p id="ownerRequestDetailMetaV29" class="muted"></p></div><button class="modal-close" onclick="closeModal('ownerRequestDetailModalV29')">✕</button></div><div id="ownerRequestDetailBodyV29" class="request-detail-body"></div><div id="ownerRequestDetailActionsV29" class="actions request-modal-actions"></div></div></div>
+<div id="changePasswordModal" class="modal-bg"><div class="modal account-modal"><div class="modal-head"><h3>Change Password</h3><button class="modal-close" onclick="closeModal('changePasswordModal')">✕</button></div><div class="field"><label>CURRENT PASSWORD</label><input id="currentPasswordInput" type="password" autocomplete="current-password"></div><div class="field"><label>NEW PASSWORD</label><input id="newPasswordInput" type="password" autocomplete="new-password"></div><div class="field"><label>CONFIRM NEW PASSWORD</label><input id="confirmPasswordInput" type="password" autocomplete="new-password"></div><div class="actions" style="justify-content:flex-end"><button class="btn" onclick="closeModal('changePasswordModal')">Cancel</button><button class="btn btn-blue" onclick="savePasswordChange()">Change Password</button></div></div></div>
+<div id="remunerationBreakdownModal" class="modal-bg">
+  <div class="modal remuneration-modal">
+    <div class="modal-head remuneration-modal-head">
+      <div class="remuneration-modal-title-wrap">
+        <h3 id="remunerationBreakdownTitle">Remuneration</h3>
+      </div>
+      <div class="remuneration-modal-head-actions">
+        <button id="remunerationTrainerListBtn" class="btn btn-sm hidden" onclick="returnToRemunerationTrainerList()">Trainers</button>
+        <button class="modal-close" onclick="closeModal('remunerationBreakdownModal')">✕</button>
+      </div>
+    </div>
+
+    <div class="stats remuneration-popup-stats" style="margin-top:12px">
+      <div class="stat"><div class="stat-label">SESSIONS</div><div class="stat-value" id="remBreakdownSessions">0</div></div>
+      <div class="stat"><div class="stat-label">HOURS</div><div class="stat-value" id="remBreakdownHours">0.0</div></div>
+      <div class="stat"><div class="stat-label">REMUNERATION</div><div class="stat-value" id="remBreakdownTotal">$0</div></div>
+      <div class="stat"><div class="stat-label">STATUS</div><div class="stat-value" id="remBreakdownStatus" style="font-size:20px"></div></div>
+    </div>
+    <div id="remunerationTrainerAction" class="remuneration-trainer-action hidden"></div>
+
+    <div id="remunerationOwnerGroups" class="remuneration-owner-groups hidden"></div>
+
+    <div id="remunerationSessionTableWrap" class="rem-session-card-list"></div>
+  </div>
+</div>
+
+<div id="trainerEditModal" class="modal-bg"><div class="modal"><div class="modal-head"><h3>Edit Trainer</h3><button class="modal-close" onclick="closeModal('trainerEditModal')">✕</button></div><div class="form-grid"><div class="field"><label>NAME</label><input id="editTrainerName"></div><div class="field"><label>EMAIL</label><input id="editTrainerEmail" type="email"></div></div><div class="form-grid"><div class="field"><label>SPECIALTY</label><input id="editTrainerSpecialty"></div><div class="field"><label>ACCOUNT STATUS</label><select id="editTrainerStatus"><option>Active</option><option>Inactive</option><option>Password reset</option></select></div></div><div class="field"><label>QUALIFICATIONS</label><textarea id="editTrainerQualifications"></textarea></div><div class="form-grid"><div class="field"><label>PUBLIC PROFILE</label><select id="editTrainerPublic"><option>Visible</option><option>Hidden</option></select></div><div class="field"><label>PEAK RATE</label><input id="editTrainerPeakRate" type="number" min="0"></div><div class="field"><label>OFF-PEAK RATE</label><input id="editTrainerOffpeakRate" type="number" min="0"></div><div class="field"><label>NEW RATES ACTIVE FROM</label><input id="editTrainerRateEffective" type="date" value="2026-08-29"></div></div><div class="actions" style="justify-content:flex-end"><button class="btn" onclick="closeModal('trainerEditModal')">Cancel</button><button class="btn btn-blue" onclick="saveTrainerEdit()">Save Trainer</button></div></div></div>
+<div id="copyPreviousPlanModal" class="modal-bg"><div class="modal"><div class="modal-head"><h3>Copy Previous Plan</h3><button class="modal-close" onclick="closeModal('copyPreviousPlanModal')">✕</button></div><p class="muted">Preview of the client's previous session plan.</p><div class="quick-list"><div class="quick-row"><div><strong>Smith back squat</strong><br><small class="muted">3 rounds • 8 reps • 25kg • 60 sec rest</small></div></div><div class="quick-row"><div><strong>Assisted pull up</strong><br><small class="muted">3 rounds • 8 reps • 35kg support • 60 sec rest</small></div></div><div class="quick-row"><div><strong>DB Romanian deadlift</strong><br><small class="muted">3 rounds • 10 reps • 20kg • 60 sec rest</small></div></div></div><div class="modal-confirm-box">Copying replaces the current unsaved exercise rows on this planning screen.</div><div class="actions" style="justify-content:flex-end"><button class="btn" onclick="closeModal('copyPreviousPlanModal')">Cancel</button><button class="btn btn-blue" onclick="confirmCopyPreviousPlan()">Copy Plan</button></div></div></div>
+<div id="ownerAvailabilityModal" class="modal-bg"><div class="modal"><div class="modal-head"><h3 id="ownerAvailabilityModalTitle">Trainer Availability</h3><button class="modal-close" onclick="closeModal('ownerAvailabilityModal')">✕</button></div><div class="availability-builder"><div class="availability-builder-row"><div class="day-picker"><label style="font-size:11px;font-weight:850">APPLY BLOCK TO</label><div class="day-selector"><label class="day-chip"><input type="checkbox" checked>Mon</label><label class="day-chip"><input type="checkbox" checked>Tue</label><label class="day-chip"><input type="checkbox" checked>Wed</label><label class="day-chip"><input type="checkbox" checked>Thu</label><label class="day-chip"><input type="checkbox">Fri</label><label class="day-chip"><input type="checkbox">Sat</label><label class="day-chip"><input type="checkbox">Sun</label></div></div><div class="field"><label>FROM</label><input type="time" value="18:00"></div><div class="field"><label>TO</label><input type="time" value="21:00"></div><button class="btn btn-blue" onclick="addAvailabilityBlock(this)">Add Time</button></div><div id="ownerAvailabilityCurrentBlocks" class="block-list"></div></div><div class="actions" style="margin-top:14px"><button class="btn btn-blue" onclick="saveOwnerAvailability()">Save</button></div></div></div>
+<div id="videoCaptureModal" class="modal-bg"><div class="modal"><div class="modal-head"><h3>Exercise Video</h3><button class="modal-close" onclick="closeModal('videoCaptureModal')">✕</button></div><div class="capture-preview"><div><div style="font-size:42px">📷</div><strong id="captureExercise">Exercise</strong></div></div><div class="field"><label>VIDEO CAPTION</label><textarea id="autoCaptionText">Exercise clip — technique set completed during today’s Fitfinity session.</textarea></div><div id="captureRecordingIndicator" class="recording-indicator">Recording</div><div class="action-row"><button id="captureRecordBtn" class="btn" onclick="toggleCaptureRecording(this)">Start Recording</button><button class="btn btn-blue" onclick="attachCaptionedClip()">Attach Video</button></div></div></div>
+
+<div id="trainerAssignedClientsModal" class="modal-bg"><div class="modal compact-list-modal"><div class="modal-head"><div><h3 id="trainerAssignedClientsModalTitle">Assigned Clients</h3><p class="muted" id="trainerAssignedClientsModalSubtitle"></p></div><button class="modal-close" onclick="closeModal('trainerAssignedClientsModal')">✕</button></div><div class="toolbar modal-search-toolbar"><input id="trainerAssignedClientSearch" placeholder="Search client" oninput="renderTrainerAssignedClientsModal()"><select id="trainerAssignedClientType" onchange="renderTrainerAssignedClientsModal()"><option value="">All types</option><option>Individual</option><option>Couple</option></select></div><div id="trainerAssignedClientsModalRows" class="quick-list modal-result-list"></div></div></div>
+<div id="upcomingRenewalsModal" class="modal-bg"><div class="modal compact-list-modal"><div class="modal-head"><div><h3>Upcoming Renewals</h3><p class="muted" id="upcomingRenewalsModalSubtitle"></p></div><button class="modal-close" onclick="closeUpcomingRenewalsModal()">✕</button></div><div class="toolbar modal-search-toolbar"><input id="upcomingRenewalsSearch" placeholder="Search client" oninput="renderUpcomingRenewalsModal()"><select id="upcomingRenewalsType" onchange="renderUpcomingRenewalsModal()"><option value="">All types</option><option>Individual</option><option>Couple</option></select></div><div id="upcomingRenewalsModalRows" class="milestone-list modal-result-list"></div></div></div>
+<div id="genericPickerModal" class="modal-bg"><div class="modal generic-picker-modal"><div class="modal-head"><h3 id="genericPickerTitle">Choose Option</h3><button class="modal-close" onclick="closeGenericPicker()">✕</button></div><div class="field generic-picker-search-field"><input id="genericPickerSearch" type="search" placeholder="Search options" oninput="renderGenericPickerOptions()"></div><div id="genericPickerOptions" class="generic-picker-list"></div></div></div>
+<div id="exercisePickerModal" class="modal-bg"><div class="modal exercise-picker-modal"><div class="modal-head"><h3>Choose Exercise</h3><button class="modal-close" onclick="closeModal('exercisePickerModal')">✕</button></div><div class="field exercise-picker-search-field"><input id="exercisePickerSearch" type="search" placeholder="Search exercises" oninput="renderExercisePickerOptions()"></div><div id="exercisePickerOptions" class="exercise-picker-list"></div></div></div>
+
+<div id="toast" class="toast"></div>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pwa.js"></script>
+
+
+<link rel="stylesheet" href="assets/css/patches/review-48.css">
+
+<script src="assets/js/patches/review-48.js"></script>
+
+<link rel="stylesheet" href="assets/css/patches/v012-normalization.css">
+<script src="assets/js/patches/review-49.js"></script>
+
+<link rel="stylesheet" href="assets/css/patches/review-50.css">
+<script src="assets/js/patches/v015.js"></script>
+
+<script src="assets/js/patches/v016.js"></script>
+
+
+<script src="assets/js/patches/v017.js"></script>
+
+
+<link rel="stylesheet" href="assets/css/patches/review-53.css">
+
+<script src="assets/js/patches/v018.js"></script>
+
+<link rel="stylesheet" href="assets/css/patches/v019.css">
+<script src="assets/js/patches/v019.js"></script>
+
+
+<link rel="stylesheet" href="assets/css/patches/v020.css">
+<script src="assets/js/patches/v020.js"></script>
+
+
+<link rel="stylesheet" href="assets/css/patches/v022.css">
+
+<script src="assets/js/patches/v023.js" id="v023-runtime"></script>
+
+<link rel="stylesheet" href="assets/css/patches/v024.css" id="v024-style">
+<script src="assets/js/patches/v024.js" id="v024-runtime"></script>
+
+<link rel="stylesheet" href="assets/css/patches/v025.css" id="v025-styles">
+<script src="assets/js/patches/v025.js" id="v025-runtime"></script>
+
+<script src="assets/js/patches/v026.js" id="v026-runtime"></script>
+<link rel="stylesheet" href="assets/css/patches/v027.css" id="v027-style">
+<script src="assets/js/patches/v027.js" id="v027-runtime"></script>
+
+<link rel="stylesheet" href="assets/css/patches/v028.css">
+<script src="assets/js/patches/v028.js"></script>
+
+
+<script src="assets/js/requests-v029.js" id="v029-runtime"></script>
+<link rel="stylesheet" href="assets/css/v030.css" id="v030-style">
+<script src="assets/js/v030.js" id="v030-runtime"></script>
+
+<link rel="stylesheet" href="assets/css/v030-final.css" id="v030-final-style">
+<script src="assets/js/v030-final.js" id="v030-final-runtime"></script>
+
+
+<link rel="stylesheet" href="assets/css/v030-final-polish.css" id="v030-final-polish">
+<link rel="stylesheet" href="assets/css/v032-ui-fixes.css" id="v032-ui-fixes">
+<script src="assets/js/v032-ui-fixes.js" id="v032-ui-fixes-runtime"></script>
+<link rel="stylesheet" href="assets/css/v033-polish.css" id="v033-polish">
+<link rel="stylesheet" href="assets/css/v034-mobile-renewals.css" id="v034-mobile-renewals">
+<script src="assets/js/v033-polish.js" id="v033-polish-runtime"></script>
+<script src="assets/js/v035-demo-data.js" id="v035-demo-data-runtime"></script>
+<link rel="stylesheet" href="assets/css/v036-onboarding-ipad.css" id="v036-style">
+<script src="assets/js/v036-onboarding-ipad.js" id="v036-runtime"></script>
+<link rel="stylesheet" href="assets/css/v037-layout-edit-fixes.css" id="v037-style">
+<script src="assets/js/v037-layout-edit-fixes.js" id="v037-runtime"></script>
+<link rel="stylesheet" href="assets/css/v038-form-cleanup.css" id="v038-style">
+<script src="assets/js/v038-form-cleanup.js" id="v038-runtime"></script>
+<link rel="stylesheet" href="assets/css/v039-responsive-cleanup.css" id="v039-style">
+<script src="assets/js/v039-responsive-cleanup.js" id="v039-runtime"></script>
+<link rel="stylesheet" href="assets/css/v040-responsive-consistency.css" id="v040-style">
+<script src="assets/js/v040-responsive-consistency.js" id="v040-runtime"></script>
+</body></html>

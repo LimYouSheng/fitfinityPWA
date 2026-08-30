@@ -1,0 +1,83 @@
+/* v0.42 — exercise insertion cues + iPad remuneration cascade correction */
+
+/* Newly added session exercise is intentionally obvious without changing row geometry. */
+#sessionExerciseRows .session-exercise-row.is-new-exercise-v42{
+  border-radius:10px!important;
+  box-shadow:0 0 0 1px rgba(111,130,255,.88),0 0 0 4px rgba(111,130,255,.08)!important;
+  background:rgba(111,130,255,.035)!important;
+}
+#sessionExerciseRows .session-exercise-row.is-new-exercise-v42 .exercise-picker-btn{
+  border:2px solid #7e8cff!important;
+  box-shadow:0 0 0 2px rgba(126,140,255,.12)!important;
+}
+#sessionExerciseRows .session-exercise-row.needs-exercise-v42 .exercise-picker-btn{
+  font-weight:850!important;
+}
+#sessionExerciseRows .camera-btn:disabled{
+  opacity:.38!important;
+  cursor:not-allowed!important;
+}
+#addSessionExerciseBtn:disabled{
+  opacity:.5!important;
+  cursor:not-allowed!important;
+}
+
+/* iPad/touch tablet: exact five equal columns in the required order.
+   This selector deliberately outranks the older v0.33 button rule. */
+.portal-tablet-v32 #remunerationOwnerGroups .rem-trainer-list-row.rem-trainer-list-row-v40,
+.portal-tablet-v32 .rem-trainer-list .rem-trainer-list-row.rem-trainer-list-row-v40{
+  display:grid!important;
+  grid-template-columns:repeat(5,minmax(0,1fr))!important;
+  grid-template-rows:auto!important;
+  gap:10px!important;
+  align-items:center!important;
+  width:100%!important;
+  padding:13px 4px!important;
+  box-sizing:border-box!important;
+}
+.portal-tablet-v32 #remunerationOwnerGroups .rem-trainer-list-row-v40>.rem-list-name-v40,
+.portal-tablet-v32 .rem-trainer-list .rem-trainer-list-row-v40>.rem-list-name-v40{
+  grid-column:1!important;
+  grid-row:1!important;
+  justify-self:center!important;
+  text-align:center!important;
+  width:100%!important;
+  min-width:0!important;
+}
+.portal-tablet-v32 #remunerationOwnerGroups .rem-trainer-list-row-v40>.rem-list-sessions-v40,
+.portal-tablet-v32 .rem-trainer-list .rem-trainer-list-row-v40>.rem-list-sessions-v40{
+  grid-column:2!important;
+  grid-row:1!important;
+}
+.portal-tablet-v32 #remunerationOwnerGroups .rem-trainer-list-row-v40>.rem-list-payout-v40,
+.portal-tablet-v32 .rem-trainer-list .rem-trainer-list-row-v40>.rem-list-payout-v40{
+  grid-column:3!important;
+  grid-row:1!important;
+}
+.portal-tablet-v32 #remunerationOwnerGroups .rem-trainer-list-row-v40>.rem-list-status-v40,
+.portal-tablet-v32 .rem-trainer-list .rem-trainer-list-row-v40>.rem-list-status-v40{
+  grid-column:4!important;
+  grid-row:1!important;
+}
+.portal-tablet-v32 #remunerationOwnerGroups .rem-trainer-list-row-v40>.rem-list-metric-v40,
+.portal-tablet-v32 .rem-trainer-list .rem-trainer-list-row-v40>.rem-list-metric-v40{
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  gap:3px!important;
+  justify-items:center!important;
+  align-content:center!important;
+  text-align:center!important;
+  width:100%!important;
+  min-width:0!important;
+}
+.portal-tablet-v32 #remunerationOwnerGroups .rem-trainer-list-row.rem-trainer-list-row-v40>.btn,
+.portal-tablet-v32 .rem-trainer-list .rem-trainer-list-row.rem-trainer-list-row-v40>.btn{
+  grid-column:5!important;
+  grid-row:1!important;
+  justify-self:center!important;
+  align-self:center!important;
+  width:64px!important;
+  min-width:64px!important;
+  max-width:64px!important;
+  margin:0!important;
+}

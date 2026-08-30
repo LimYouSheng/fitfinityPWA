@@ -1,0 +1,156 @@
+/* v0.36 — Couple onboarding, coherent couple overview, edit-state cleanup, iPad dashboard parity */
+
+/* Cancel actions exist only while an edit is active. Later button display rules must never override .hidden. */
+.header-cancel-btn.hidden,
+.header-cancel-btn.small.hidden,
+#sharedClientCancelBtn.hidden,
+#clientHealthCancelBtn.hidden,
+#clientRemarksCancelBtn.hidden,
+#ownerTrainerRatesCancelBtn.hidden{
+  display:none!important;
+}
+
+/* General onboarding section: visually separate personal information from shared PT setup. */
+.client-general-section-v36{
+  position:relative;
+  overflow:hidden;
+  margin:14px 0 16px;
+  padding:16px;
+  border:1px solid #3a4150;
+  border-radius:12px;
+  background:
+    radial-gradient(circle at 100% 0,rgba(72,96,246,.16),transparent 34%),
+    linear-gradient(145deg,#12151d 0%,#0e1117 62%,#111827 100%);
+}
+.client-general-section-v36:after{
+  content:'GENERAL';
+  position:absolute;
+  right:13px;
+  top:6px;
+  font-size:48px;
+  font-weight:950;
+  letter-spacing:3px;
+  color:rgba(255,255,255,.025);
+  pointer-events:none;
+}
+.client-general-banner-v36{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;position:relative;z-index:1}
+.client-general-icon-v36{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;flex:0 0 auto;background:#5367f4;color:white;font-size:12px;font-weight:950;box-shadow:0 8px 28px rgba(83,103,244,.22)}
+.client-general-kicker-v36{display:block;color:#97a6ff;font-size:9px;font-weight:900;letter-spacing:.9px;margin-bottom:3px}
+.client-general-banner-v36 h4{margin:0;font-size:17px}
+.client-general-banner-v36 p{margin:4px 0 0;color:#9ba4b4;font-size:10px;line-height:1.45;max-width:680px}
+.client-overall-remarks-v36{margin-top:13px!important;padding-top:13px;border-top:1px solid rgba(255,255,255,.08)}
+
+.couple-general-tabs-v36{display:grid;grid-template-columns:minmax(0,1fr) 32px minmax(0,1fr);gap:8px;align-items:center;margin:3px 0 14px;position:relative;z-index:1}
+.couple-general-tabs-v36 button{position:relative;min-height:58px;text-align:left;padding:10px 12px;border:1px solid #394052;border-radius:10px;background:#0c0f15;color:#fff;transition:.18s ease}
+.couple-general-tabs-v36 button span{display:block;font-size:12px;font-weight:900}
+.couple-general-tabs-v36 button small{display:block;margin-top:3px;color:#929caf;font-size:9px;font-weight:750}
+.couple-general-tabs-v36 button.active{border-color:#6e80ff;background:rgba(83,103,244,.14);box-shadow:inset 0 0 0 1px rgba(110,128,255,.22)}
+.couple-general-tabs-v36 button.complete{border-color:#3d7b62;background:rgba(43,117,84,.12)}
+.couple-general-tabs-v36 button.complete small{color:#9adbbf}
+.couple-tab-arrow-v36{text-align:center;color:#77839a;font-size:20px;font-weight:900}
+.couple-tab-cue-v36{position:absolute;right:8px;top:8px;font-size:7px;letter-spacing:.65px;background:#f0a83b;color:#19130b;border-radius:999px;padding:3px 5px}
+.couple-general-tabs-v36 button.attention{animation:coupleCueV36 1.4s ease-in-out infinite;border-color:#c78b39}
+@keyframes coupleCueV36{50%{box-shadow:0 0 0 4px rgba(240,168,59,.09)}}
+.couple-panel-label-v36{font-size:9px;font-weight:900;letter-spacing:.75px;color:#8f9ab0;margin:0 0 10px}
+.couple-second-client-prompt-v36{display:flex;flex-direction:column;gap:2px;padding:9px 10px;margin:0 0 11px;border-left:3px solid #f0a83b;background:rgba(240,168,59,.07);border-radius:0 7px 7px 0}
+.couple-second-client-prompt-v36 strong{font-size:10px;color:#f0c37d}.couple-second-client-prompt-v36 span{font-size:9px;color:#a9b0bd}
+
+/* Couple profile overview: never collapse two people into a single '&' information record. */
+.couple-overview-people{display:grid;gap:12px;margin-top:10px}
+.couple-name-rows-v36{border:1px solid #303642;border-radius:9px;overflow:hidden;background:#0e1117}
+.couple-name-row-v36{display:grid;grid-template-columns:110px minmax(0,1fr);gap:12px;padding:9px 11px;border-bottom:1px solid #2a303a;align-items:center}
+.couple-name-row-v36:last-child{border-bottom:0}
+.couple-name-row-v36 span{font-size:9px;color:#8f98a8;font-weight:850;letter-spacing:.45px}.couple-name-row-v36 strong{font-size:12px}
+.couple-person-grid-v36{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.couple-person-card-v36{border:1px solid #303642;border-radius:9px;background:#0e1117;padding:11px}
+.couple-person-card-v36 h4{margin:0 0 8px;font-size:11px;color:#aeb8ff}
+.couple-person-card-v36 .info-row{grid-template-columns:105px minmax(0,1fr)!important;padding:7px 0!important}
+.couple-person-card-v36 .info-row span{font-size:9px!important}.couple-person-card-v36 .info-row strong{font-size:10px!important;text-align:right;overflow-wrap:anywhere}
+.couple-shared-meta-v36{border-top:1px solid #303642;padding-top:5px}
+.couple-edit-grid-v36 input,.couple-edit-grid-v36 select{min-width:0!important;width:100%!important}
+.couple-edit-grid-v36 .phone-input-group{display:grid!important;grid-template-columns:82px minmax(0,1fr)!important}
+
+.couple-health-notes{display:grid;gap:9px}
+.couple-health-card-v36{border:1px solid #323844;border-radius:8px;background:#0d1016;padding:10px 11px}
+.couple-health-card-v36 strong{display:block;font-size:10px;color:#aeb8ff;margin-bottom:5px}.couple-health-card-v36 p{margin:0;color:#dce1e9;font-size:11px;line-height:1.45}.couple-health-card-v36 textarea{width:100%;min-height:92px}
+
+/* iPad: Requests and Upcoming Renewals are peers — same panel/header/record density. */
+.portal-tablet-v32 #ownerRequestsPreviewPanel,
+.portal-tablet-v32 .owner-milestone-panel{
+  padding:12px 13px!important;
+}
+.portal-tablet-v32 #ownerRequestsPreviewPanel .requests-preview-head,
+.portal-tablet-v32 .owner-milestone-panel .renewals-head{
+  min-height:34px!important;
+  margin-bottom:5px!important;
+  align-items:center!important;
+  flex-direction:row!important;
+}
+.portal-tablet-v32 #ownerRequestsPreviewPanel h3,
+.portal-tablet-v32 .owner-milestone-panel h3{
+  margin:0!important;
+  font-size:16px!important;
+}
+.portal-tablet-v32 #ownerRequestsPreviewPanel .btn,
+.portal-tablet-v32 .owner-milestone-panel .renewals-view-all{
+  min-height:28px!important;
+  padding:5px 8px!important;
+  font-size:9px!important;
+}
+.portal-tablet-v32 #ownerDashboardRequestRows,
+.portal-tablet-v32 #ownerMilestoneRows{gap:0!important}
+.portal-tablet-v32 .dashboard-request-row-v30f,
+.portal-tablet-v32 #ownerMilestoneRows .milestone-row{
+  min-height:38px!important;
+  padding:5px 0!important;
+  border:0!important;
+  border-bottom:1px solid #292d36!important;
+  border-radius:0!important;
+  background:transparent!important;
+  align-items:center!important;
+}
+.portal-tablet-v32 .dashboard-request-row-v30f:last-child,
+.portal-tablet-v32 #ownerMilestoneRows .milestone-row:last-child{border-bottom:0!important}
+.portal-tablet-v32 .dashboard-request-row-v30f{
+  grid-template-columns:auto minmax(0,1fr) auto auto!important;
+  gap:7px!important;
+}
+.portal-tablet-v32 .dashboard-request-row-v30f strong{font-size:10.5px!important}
+.portal-tablet-v32 .dashboard-request-row-v30f small{display:none!important}
+.portal-tablet-v32 #ownerMilestoneRows .milestone-row{
+  grid-template-columns:minmax(0,1fr) auto auto auto!important;
+  gap:7px!important;
+}
+.portal-tablet-v32 #ownerMilestoneRows .milestone-client,
+.portal-tablet-v32 #ownerMilestoneRows .milestone-session-count,
+.portal-tablet-v32 #ownerMilestoneRows .milestone-followup,
+.portal-tablet-v32 #ownerMilestoneRows .milestone-row>.btn{
+  grid-column:auto!important;grid-row:auto!important;min-width:0!important;align-self:center!important;
+}
+.portal-tablet-v32 #ownerMilestoneRows .milestone-client strong{font-size:10.5px!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+.portal-tablet-v32 #ownerMilestoneRows .milestone-client small,
+.portal-tablet-v32 #ownerMilestoneRows .milestone-session-count .metric-label{display:none!important}
+.portal-tablet-v32 #ownerMilestoneRows .milestone-session-count strong{font-size:9px!important;white-space:nowrap!important}
+.portal-tablet-v32 #ownerMilestoneRows .milestone-followup .pill{font-size:7.5px!important;white-space:nowrap!important}
+.portal-tablet-v32 #ownerMilestoneRows .milestone-row>.btn{white-space:nowrap!important;font-size:8.5px!important;padding:5px 7px!important;min-height:27px!important}
+
+@media(max-width:780px){
+  .client-general-section-v36{padding:12px}.client-general-section-v36:after{font-size:34px}
+  .couple-general-tabs-v36{grid-template-columns:1fr 22px 1fr;gap:5px}.couple-general-tabs-v36 button{min-height:55px;padding:9px}.couple-tab-arrow-v36{font-size:15px}
+  .couple-person-grid-v36{grid-template-columns:1fr}.couple-name-row-v36{grid-template-columns:90px minmax(0,1fr)}
+}
+
+/* v0.36 dashboard row markup: no information stacks on iPad. */
+.dashboard-request-row-v36{display:grid!important;grid-template-columns:auto minmax(120px,.85fr) minmax(150px,1.2fr) auto auto!important;gap:8px!important;align-items:center!important}
+.dashboard-request-who-v36{display:block!important;min-width:0;font-size:10.5px!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dashboard-request-context-v36{min-width:0;color:#a4adbd;font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.milestone-row-v36{grid-template-columns:minmax(120px,.8fr) minmax(150px,1.1fr) auto auto auto!important}
+.renewal-context-v36{min-width:0;color:#9ea7b7;font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.portal-tablet-v32 .dashboard-request-row-v36{grid-template-columns:auto minmax(120px,.8fr) minmax(155px,1.15fr) auto auto!important}
+.portal-tablet-v32 #ownerMilestoneRows .milestone-row-v36{grid-template-columns:minmax(120px,.8fr) minmax(155px,1.15fr) auto auto auto!important}
+@media(max-width:780px){
+  .dashboard-request-row-v36{grid-template-columns:auto minmax(0,1fr) auto auto!important;gap:5px!important}
+  .dashboard-request-context-v36{display:none!important}
+  .milestone-row-v36{grid-template-columns:minmax(0,1fr) auto auto auto!important}
+  .renewal-context-v36{display:none!important}
+}

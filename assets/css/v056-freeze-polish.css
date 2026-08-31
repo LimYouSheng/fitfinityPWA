@@ -1,0 +1,23 @@
+/* v0.56 — final session entity controls + autonomy editor consistency */
+.session-entity-stat-v56{position:relative}
+.session-entity-stat-head-v56{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  min-width:0;
+  margin-bottom:4px;
+}
+.session-entity-stat-head-v56 .stat-label{margin:0}
+.session-entity-view-btn-v56{
+  flex:0 0 auto;
+  min-height:28px;
+  padding:4px 10px;
+  line-height:1;
+}
+/* v0.55 made the client name itself interactive. v0.56 restores plain entity text. */
+#trainerSessionClient .session-client-link-v55{display:none!important}
+@media(max-width:780px){
+  .session-entity-stat-head-v56{gap:6px}
+  .session-entity-view-btn-v56{min-height:26px;padding:3px 8px;font-size:10px}
+}

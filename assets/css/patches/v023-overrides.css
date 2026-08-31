@@ -1,0 +1,23 @@
+/* v0.23 — compact identity cards, consistent mobile chrome, simplified remuneration */
+.shared-identity-card{margin-bottom:14px;min-height:0!important;padding:13px 14px!important;grid-template-columns:58px minmax(0,1fr) auto!important;gap:12px!important;align-items:center!important}
+.shared-identity-card .portal-avatar{width:54px!important;height:54px!important;font-size:17px!important}
+.identity-card-copy{min-width:0}
+.identity-card-copy h2{font-size:20px!important;line-height:1.05!important}
+.identity-card-copy p{font-size:11px!important;margin:4px 0 0!important;line-height:1.25!important}
+.identity-card-actions{display:flex;align-items:center;justify-content:flex-end;gap:6px;flex-wrap:wrap;min-width:0}
+.identity-card-actions .pill{white-space:nowrap}
+#owner-client>.tabs,#owner-trainer>.tabs{margin-top:0!important}
+.modal-primary-full{display:flex!important;width:100%!important;margin-top:14px!important}
+#remunerationBreakdownModal .remuneration-popup-stats{display:none!important}
+@media(max-width:780px){
+  .portal-top-left{gap:7px!important}
+  .mobile-back-cue,.mobile-drawer-btn,.portal-home-btn{width:38px!important;height:38px!important;min-width:38px!important;max-width:38px!important;flex:0 0 38px!important;padding:0!important;border-radius:8px!important;display:inline-flex!important;align-items:center!important;justify-content:center!important}
+  .portal-home-btn{font-size:17px!important;gap:0!important}
+  .portal-home-btn span{display:none!important}
+  .shared-identity-card{grid-template-columns:50px minmax(0,1fr) auto!important;padding:11px 12px!important;gap:9px!important}
+  .shared-identity-card .portal-avatar{width:46px!important;height:46px!important;font-size:14px!important}
+  .identity-card-copy h2{font-size:17px!important}
+  .identity-card-actions{gap:5px!important;max-width:125px}
+  .identity-card-actions .header-edit-icon,.identity-card-actions .header-cancel-btn{padding:7px 8px!important;font-size:9px!important;min-height:30px!important}
+  #trainerModal .modal-primary-full{width:100%!important}
+}

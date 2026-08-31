@@ -1,7 +1,0 @@
-/* v0.51 — trainer request tracking */
-#trainer-requests .request-toolbar{margin-bottom:12px}
-#trainer-requests .trainer-request-row-v51 .request-main strong{margin-top:5px}
-@media(max-width:780px){
-  #trainer-requests .request-toolbar{grid-template-columns:1fr 1fr!important}
-  #trainer-requests .request-toolbar>*:first-child{grid-column:1/-1}
-}

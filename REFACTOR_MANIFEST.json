@@ -1,0 +1,133 @@
+{
+  "images": {
+    "46e1f99c7f": {
+      "file": "fitfinity-logo.jpg",
+      "bytes": 9944
+    },
+    "d8fefb4671": {
+      "file": "home-hero.jpg",
+      "bytes": 96943
+    },
+    "38f196cf61": {
+      "file": "video-dumbbell-strength.jpg",
+      "bytes": 26636
+    },
+    "9d7d9c48f9": {
+      "file": "video-lower-body-power.jpg",
+      "bytes": 24670
+    },
+    "000fec3e83": {
+      "file": "video-core-conditioning.jpg",
+      "bytes": 23112
+    },
+    "c3bf798221": {
+      "file": "video-hiit-finisher.jpg",
+      "bytes": 26990
+    },
+    "1c3a18ad90": {
+      "file": "membership-hero.jpg",
+      "bytes": 51289
+    },
+    "ab3cde0b1b": {
+      "file": "equipment-squat-racks.jpg",
+      "bytes": 23389
+    },
+    "9051fb21fb": {
+      "file": "equipment-dumbbells.jpg",
+      "bytes": 21693
+    },
+    "5b700bbd4e": {
+      "file": "equipment-cardio-zone.jpg",
+      "bytes": 23132
+    },
+    "88cd69b4b4": {
+      "file": "equipment-functional-area.jpg",
+      "bytes": 23847
+    },
+    "23327f2705": {
+      "file": "equipment-adjustable-benches.jpg",
+      "bytes": 21693
+    },
+    "19bf9ddbf5": {
+      "file": "equipment-recovery-stretch.jpg",
+      "bytes": 22220
+    },
+    "0f8955f569": {
+      "file": "training-hero.jpg",
+      "bytes": 42317
+    },
+    "3178b42bb6": {
+      "file": "trainer-huang-min.jpg",
+      "bytes": 24004
+    },
+    "0bbc9c43f5": {
+      "file": "trainer-jason.jpg",
+      "bytes": 21019
+    },
+    "86a55eaf70": {
+      "file": "trainer-meiling.jpg",
+      "bytes": 19702
+    },
+    "a2ce5d915f": {
+      "file": "trainer-darren.jpg",
+      "bytes": 20293
+    },
+    "5e1cebf185": {
+      "file": "about-hero.jpg",
+      "bytes": 31775
+    },
+    "dd1706d49e": {
+      "file": "about-story.jpg",
+      "bytes": 44356
+    },
+    "eaa1c6a14d": {
+      "file": "about-timeline.jpg",
+      "bytes": 32367
+    },
+    "f4b45117c0": {
+      "file": "staff-login.jpg",
+      "bytes": 82446
+    }
+  },
+  "css_files": [
+    "core.css",
+    "patches/v023-overrides.css",
+    "patches/review-48.css",
+    "patches/v012-normalization.css",
+    "patches/review-50.css",
+    "patches/review-53.css",
+    "patches/v019.css",
+    "patches/v020.css",
+    "patches/v022.css",
+    "patches/v024.css",
+    "patches/v025.css",
+    "patches/v027.css",
+    "patches/v028.css",
+    "v030.css",
+    "v030-final.css",
+    "v030-final-polish.css",
+    "v048-permissions-status-contact.css"
+  ],
+  "js_files": [
+    "core.js",
+    "pwa.js",
+    "patches/review-48.js",
+    "patches/review-49.js",
+    "patches/v015.js",
+    "patches/v016.js",
+    "patches/v017.js",
+    "patches/v018.js",
+    "patches/v019.js",
+    "patches/v020.js",
+    "patches/v023.js",
+    "patches/v024.js",
+    "patches/v025.js",
+    "patches/v026.js",
+    "patches/v027.js",
+    "patches/v028.js",
+    "requests-v029.js",
+    "v030.js",
+    "v030-final.js",
+    "v048-permissions-status-contact.js"
+  ]
+}

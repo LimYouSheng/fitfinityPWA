@@ -1,0 +1,25 @@
+/* v0.28 — tablet polish, unified tabs, live calendar, interval removal */
+.hidden{display:none!important}
+#owner-client>.tabs,.trainer-detail-tabs,.trainer-self-tabs{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(96px,1fr))!important;gap:7px!important;width:100%!important;overflow:visible!important;white-space:normal!important}
+#owner-client>.tabs button,.trainer-detail-tabs button,.trainer-self-tabs button{width:100%!important;min-width:0!important;min-height:36px!important;padding:8px 7px!important;font-size:10px!important;line-height:1.15!important;white-space:normal!important;text-align:center!important}
+.session-exercise-header,.session-exercise-row,.session-exercise-display-row{grid-template-columns:minmax(250px,2fr) .72fr .58fr .62fr .72fr auto!important}
+@media (min-width:781px) and (max-width:1100px){
+  .portal-page>.page-head:first-child h1,.portal-page>.page-head:first-child p{display:none!important}
+  .portal-page>.page-head:first-child{margin-bottom:12px!important;min-height:0!important}
+  #sessionExerciseRows .session-exercise-row,#sessionExerciseRows .session-exercise-display-row{position:relative!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:9px!important;padding:12px 0!important}
+  #sessionExerciseRows .session-exercise-main,#sessionExerciseRows .session-display-exercise{grid-column:1/-1!important;position:relative!important;min-width:0!important;padding-right:46px!important}
+  #sessionExerciseRows .session-exercise-selectline,#sessionExerciseRows .session-exercise-titleline{display:block!important;position:static!important;width:100%!important;min-width:0!important}
+  #sessionExerciseRows .session-exercise-selectline .camera-btn,#sessionExerciseRows .session-exercise-titleline .camera-btn{position:absolute!important;right:0!important;top:0!important;width:38px!important;height:38px!important;margin:0!important;z-index:2!important}
+  #sessionExerciseRows .exercise-actions{grid-column:1/-1!important;justify-content:flex-end!important}
+  .session-delivery-strip{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;width:100%!important;max-width:none!important;gap:9px!important;margin-left:0!important;margin-right:0!important}
+  .session-delivery-strip .session-delivery-btn{width:100%!important;max-width:none!important;justify-content:center!important;text-align:center!important}
+  #remunerationBreakdownModal .remuneration-modal{width:min(760px,calc(100vw - 32px))!important;max-width:none!important}
+  #remunerationOwnerGroups .rem-trainer-list-row{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;align-items:center!important;gap:14px!important;padding:12px 2px!important}
+  #remunerationOwnerGroups .rem-trainer-list-row>.btn{grid-column:2!important;grid-row:1!important;justify-self:end!important;align-self:center!important;width:auto!important;min-width:64px!important;margin:0!important}
+  .rem-trainer-list-main{min-width:0!important}.rem-trainer-list-meta{display:flex!important;align-items:center!important;gap:8px!important;flex-wrap:wrap!important;margin-top:5px!important}.rem-trainer-list-meta .pill{font-size:9px!important;padding:4px 7px!important}
+  .rem-session-card{grid-template-columns:minmax(0,1.3fr) minmax(0,.8fr) auto!important;gap:10px!important;align-items:center!important}.rem-session-card-pay{justify-self:end!important;text-align:right!important}
+}
+@media(max-width:780px){
+  #owner-client>.tabs,.trainer-detail-tabs,.trainer-self-tabs{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important}
+  #owner-client>.tabs button,.trainer-detail-tabs button,.trainer-self-tabs button{min-height:34px!important;padding:7px 5px!important;font-size:8.5px!important}
+}

@@ -1,0 +1,90 @@
+/* v0.47 — final onboarding section hierarchy + edit control alignment */
+
+/* Keep all section-level edit/cancel controls vertically centred with their headings. */
+.edit-section-head{
+  align-items:center!important;
+}
+.header-edit-actions{
+  align-items:center!important;
+}
+.header-edit-actions .header-edit-icon,
+.header-edit-actions .header-cancel-btn{
+  align-self:center!important;
+  display:inline-flex;
+  align-items:center!important;
+  justify-content:center!important;
+  line-height:1!important;
+  margin-top:0!important;
+  margin-bottom:0!important;
+}
+.header-edit-actions .header-cancel-btn.hidden{
+  display:none!important;
+}
+
+/* Unnumbered onboarding section cards used consistently in Add Client / Add Trainer. */
+#clientModal .onboarding-section-v47,
+#trainerModal .onboarding-section-v47{
+  position:relative;
+  overflow:hidden;
+  box-sizing:border-box;
+  margin:14px 0 16px!important;
+  padding:16px!important;
+  border:1px solid #3a4150!important;
+  border-radius:12px!important;
+  background:
+    radial-gradient(circle at 100% 0,rgba(72,96,246,.16),transparent 34%),
+    linear-gradient(145deg,#12151d 0%,#0e1117 62%,#111827 100%)!important;
+}
+
+#clientModal .client-general-section-v36{
+  margin:14px 0 16px;
+}
+#clientModal .client-general-section-v36:after{
+  display:none!important;
+}
+
+#clientModal .onboarding-section-title-v47,
+#trainerModal .onboarding-section-title-v47{
+  display:flex;
+  align-items:center;
+  min-height:34px;
+  margin:0 0 14px;
+  padding:0 0 10px;
+  border-bottom:1px solid rgba(151,166,255,.24);
+  color:#97a6ff;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.11em;
+  line-height:1.2;
+  text-transform:uppercase;
+}
+
+/* Existing inner panels should not create a second visual card inside the new section. */
+#clientModal #clientAvailabilityPanel,
+#clientModal #clientMatchPanel,
+#trainerModal .panel.onboarding-section-v47{
+  box-shadow:none!important;
+}
+#clientModal #clientAvailabilityPanel .availability-builder,
+#trainerModal .onboarding-section-v47 .availability-builder{
+  margin-top:0!important;
+}
+
+/* Remove obsolete numbered general-information marker if stale cached markup is encountered. */
+#clientModal .client-general-icon-v36{
+  display:none!important;
+}
+
+@media(max-width:780px){
+  #clientModal .onboarding-section-v47,
+  #trainerModal .onboarding-section-v47,
+  #clientModal .client-general-section-v36{
+    padding:12px!important;
+    margin:12px 0 14px!important;
+  }
+  #clientModal .onboarding-section-title-v47,
+  #trainerModal .onboarding-section-title-v47{
+    margin-bottom:12px;
+    padding-bottom:9px;
+  }
+}

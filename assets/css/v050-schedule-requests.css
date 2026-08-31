@@ -1,0 +1,86 @@
+/* v0.50 — fixed weekly schedule request workflow + iPad trainer-match containment */
+
+.client-fixed-weekly-schedule-v49 .edit-section-head{margin-bottom:10px}
+.fixed-weekly-schedule-editor-v50{display:grid;gap:10px}
+.fixed-weekly-schedule-edit-row-v50{
+  display:grid;
+  grid-template-columns:minmax(150px,1fr) minmax(140px,.8fr);
+  gap:12px;
+  align-items:end;
+  padding:12px;
+  border:1px solid #30343e;
+  border-radius:8px;
+  background:#0d0f14;
+}
+.fixed-weekly-schedule-edit-row-v50 .field{margin:0;min-width:0}
+.fixed-weekly-schedule-edit-row-v50 select,
+.fixed-weekly-schedule-edit-row-v50 input{width:100%;min-width:0;box-sizing:border-box}
+.fixed-weekly-schedule-request-note-v50{
+  padding:10px 12px;
+  border:1px solid rgba(111,130,255,.42);
+  border-radius:8px;
+  background:rgba(79,103,246,.08);
+  color:#bfc8ff;
+  font-size:11px;
+  line-height:1.45;
+}
+.schedule-compare-v50{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:12px;
+}
+.schedule-compare-card-v50{
+  border:1px solid #30343e;
+  border-radius:10px;
+  background:#0d0f14;
+  padding:12px;
+  min-width:0;
+}
+.schedule-compare-card-v50 h4{margin:0 0 9px;font-size:12px}
+.schedule-compare-row-v50{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-top:1px solid #252933}
+.schedule-compare-row-v50:first-of-type{border-top:0}
+.schedule-compare-row-v50 span{color:#aeb5c2;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.3px}
+.schedule-compare-row-v50 strong{font-size:11px;text-align:right}
+
+/* Strong Safari/iPad containment: native time controls have a large intrinsic width. */
+@media (min-width:781px) and (max-width:1366px){
+  #clientModal .client-matched-slot{
+    grid-template-columns:22px minmax(0,1fr) 148px!important;
+    column-gap:10px!important;
+    width:100%!important;
+    max-width:100%!important;
+    padding:10px 12px!important;
+    box-sizing:border-box!important;
+    overflow:hidden!important;
+  }
+  #clientModal .client-matched-slot .slot-window{min-width:0!important;overflow:hidden!important}
+  #clientModal .client-matched-slot .field{
+    grid-column:3!important;
+    width:148px!important;
+    min-width:148px!important;
+    max-width:148px!important;
+    justify-self:end!important;
+    overflow:hidden!important;
+    box-sizing:border-box!important;
+  }
+  #clientModal .client-matched-slot .field label{font-size:10px!important;margin-bottom:5px!important}
+  #clientModal .client-matched-slot .matched-session-start{
+    -webkit-appearance:none!important;
+    appearance:none!important;
+    display:block!important;
+    width:148px!important;
+    min-width:0!important;
+    max-width:148px!important;
+    height:40px!important;
+    padding:7px 6px!important;
+    font-size:13px!important;
+    line-height:1!important;
+    box-sizing:border-box!important;
+  }
+}
+
+@media (max-width:780px){
+  .fixed-weekly-schedule-edit-row-v50{grid-template-columns:1fr;gap:8px}
+  .schedule-compare-v50{grid-template-columns:1fr}
+}
